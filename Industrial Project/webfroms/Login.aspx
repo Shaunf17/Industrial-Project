@@ -6,56 +6,35 @@
 <head runat="server">
     <link href="../css/LoginCss.css" rel="stylesheet" />
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
     <title></title>
 </head>
-<body>
-    <%--    <div class = "center">
-    <form id="form1" runat="server">
-        <h1>Welcome</h1>
+<body id="body">
+    <div class="container">
+        <div class="row" >
+            <div class="col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-6 col-xs-offset-3">
+                <form class="form-group form-login" runat="server">
+                    <h1>Welcome</h1>
+                    <div class="labels" style="margin-top:3%">
+                        <label>Username </label>
+                        <asp:TextBox ID="userName" runat="server" CssClass="textbox form-control input-sm chat-input "></asp:TextBox>
+                    </div>
+                    <div class="labels">
+                        <label>Password</label>
+                        <asp:TextBox ID="userPassword" runat="server" CssClass="textbox form-control input-sm chat-input " TextMode="Password"></asp:TextBox>
+                        <span class="group-btn">
+                            <asp:Label ID="Label1" runat="server" Visible="False" Text="Incorrect username or password."></asp:Label>
+                        </span>
+                    </div>
+                    <div class="wrapper">
+                        <span class="group-btn">
+                            <asp:Button ID="btnlogin" runat="server" Text="LOGIN" OnClick="Btnlogin_click" CssClass="btn btn-primary btn-md"></asp:Button>
+                        </span>
+                    </div>
+                </form>
 
-        <h3>Username:</h3>
-        <asp:TextBox ID="TextBox4" runat="server" Height="26px" Width="90%" CssClass="userIcon"></asp:TextBox>
-        <br/>
-        <h2>
-            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Please enter your username" ControlToValidate="TextBox4"></asp:RequiredFieldValidator>
-        </h2>
-        <h3>Password:</h3>
-        <asp:TextBox ID="TextBox5" runat="server" Height="26px" Width="90%" CssClass="PasswordIcon" TextMode="Password"></asp:TextBox>
-
-        <h2>
-            <asp:RequiredFieldValidator ID="RequiredValidator2" runat="server" ErrorMessage="Pleaser enter your password" ControlToValidate="TextBox5"></asp:RequiredFieldValidator>
-        </h2>
-        
-        <h2>
-            <asp:Label ID="Label1info" runat="server" Text="Label" Visible="false"></asp:Label>
-        </h2>
-        <p>
-            <asp:Button ID="btnlogin" runat="server"  Text="LOGIN" CssClass="btnlogin"></asp:Button>
-            </p>
-
-    </form>
-    </div>--%>
-        <div class="container centered">
-            <div class="row">
-                <div class="col-md-offset-5 col-md-3">
-                    <form class="form-login" runat="server">
-                        <h4>Login</h4>
-                        <asp:TextBox ID="userName" runat="server" CssClass="form-control input-sm chat-input"></asp:TextBox>
-                        </br>
-           
-                        <asp:TextBox ID="userPassword" runat="server" CssClass="form-control input-sm chat-input" TextMode="Password"></asp:TextBox>
-                        </br>
-           
-                        <div class="wrapper">
-                            <span class="group-btn">
-                                <asp:Button ID="btnlogin" runat="server"  Text="LOGIN" CssClass="btn btn-primary btn-md"></asp:Button>
-                            </span>
-                        </div>
-                    </form>
-
-                </div>
             </div>
         </div>
+    </div>
 </body>
 </html>

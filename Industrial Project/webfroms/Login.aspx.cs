@@ -15,28 +15,33 @@ namespace Industrial_Project.webfroms
         {
 
         }
-        
-        //protected void Btnlogin_click(object sender,EventArgs e)
-        //{
-        //    //SqlConnection conn = new SqlConnection();
-        //    //string connString = ConfigurationManager.ConnectionStrings["Connection"].ConnectionString;
-        //    //SqlCommand Cmd = new SqlCommand();
-        //    //conn.ConnectionString = connString;
 
-        //    //SqlCommand com = new SqlCommand();
-        //    //conn.Open();
+        protected void Btnlogin_click(object sender, EventArgs e)
+        {
+            SqlConnection conn = new SqlConnection();
+            string connString = ConfigurationManager.ConnectionStrings["Connection"].ConnectionString;
+            SqlCommand Cmd = new SqlCommand();
+            conn.ConnectionString = connString;
+            
+            SqlCommand com = new SqlCommand("CheckUser",conn);
+            com.CommandType = System.Data.CommandType.StoredProcedure;
+            SqlParameter username= new SqlParameter("username", userName.Text);
+            SqlParameter password = new SqlParameter("password", userPassword.Text);
+            com.Parameters.Add(username);
+            com.Parameters.Add(password);
+            conn.Open();
 
-        //    //SqlDataReader rd = com.ExecuteReader();
-        //    //if(rd.HasRows)
-        //    //{
-        //    //    rd.Read();
-        //    //    Response.Redirect("WebForm1.aspx");
-        //    //}
-        //    //else
-        //    //{
-        //    //    Label1info.Visible = true;
-        //    //    Label1info.Text = "Invalid username or password.";
-        //    //}
-        //}
+            SqlDataReader rd = com.ExecuteReader();
+            if (rd.HasRows)
+            {
+                rd.Read();
+
+                Response.Redirect("WebForm1.aspx");
+            }
+            else
+            {
+                Label1.Visible = true;
+            }
+        }
     }
 }
