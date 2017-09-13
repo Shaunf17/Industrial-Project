@@ -20,11 +20,11 @@ namespace Industrial_Project
             string connString = ConfigurationManager.ConnectionStrings["Connection"].ConnectionString;
             con.ConnectionString = connString;
             con.Open();
-            SqlCommand comm = new SqlCommand("SELECT TOP 10 [Date & Time],[Retailer Ref],[Outlet Ref],[Retailer Name],[Outlet Name],[New user id],[Transaction Type],[Cash Spent],[Discount Amount],[Total Amount],[ID] FROM[ip17team6db].[dbo].[_xlnm#_FilterDatabase]");
+            SqlCommand comm = new SqlCommand("SELECT TOP 10 [Date & Time],[Retailer Ref],[Outlet Ref],[Retailer Name],[Outlet Name],[New user id],[Transaction Type],[Cash Spent],[Discount Amount],[Total Amount],[ID] FROM[ip17team6db].[dbo].[YoyoDisbursals]");
             comm.Connection = con;
             SqlDataReader rd = comm.ExecuteReader();
             table.Append("<table border='1'>");
-            table.Append("<tr><th> entry1 </th><th> entry2 </th><th> entry3 </th><th> entry4 </th><th> entry5 </th><th> entry6 </th><th> entry7 </th><th> entry8 </th><th> entry9 </th><th> entry10 </th><th> entry11 </th>");
+            table.Append("<tr><th> entry1 </th><th> entry2 </th><th> entry3 </th><th> entry4 </th><th> entry 5 </th><th> entry6 </th><th> entry7 </th><th> entry8 </th><th> entry9 </th><th> entry10 </th><th> entry11 </th>");
             table.Append("</tr>");
             if (rd.HasRows)
             {
