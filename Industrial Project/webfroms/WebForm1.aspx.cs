@@ -24,7 +24,7 @@ namespace Industrial_Project
             comm.Connection = con;
             SqlDataReader rd = comm.ExecuteReader();
             table.Append("<table border='1'>");
-            table.Append("<tr><th> entry1 </th><th> entry2 </th><th> entry3 </th><th> entry4 </th><th> entry 5 </th><th> entry6 </th><th> entry7 </th><th> entry8 </th><th> entry9 </th><th> entry10 </th><th> entry11 </th>");
+            table.Append("<tr><th> dick </th><th> butt </th><th> dick </th><th> butt </th><th> dick 5 </th><th> butt </th><th> dick </th><th> butt </th><th> dick </th><th> butt </th><th> dick </th>");
             table.Append("</tr>");
             if (rd.HasRows)
             {

@@ -19,10 +19,11 @@
     </div>
     <script>
         var ctx = document.getElementById('myChart').getContext('2d');
+
         var myChart = new Chart(ctx, {
             type: 'line',
             data: {
-                labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
+                labels: ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'],
                 datasets: [{
                     label: 'apples',
                     data: [12, 19, 3, 17, 6, 3, 7],
