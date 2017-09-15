@@ -14,54 +14,83 @@ namespace Industrial_Project.webfroms
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            testerMethod();
-            testerMethod2();
+            displayRevenue();
+            displayPopularLocation();
+            displayRedemptions();
+            displayLeastPopular();
         }
 
 
-        public void testerMethod()
+        public void displayRevenue()
         {
-            //open db connection
             SqlConnection conn = new SqlConnection();
             string connString = ConfigurationManager.ConnectionStrings["Connection"].ConnectionString;
             conn.ConnectionString = connString;
             conn.Open();
 
-            //prepare and execute sql command
-            SqlCommand comm = new SqlCommand("Dashboard_LeastPopular", conn);
+            SqlCommand comm = new SqlCommand("Dashboard_Revenue", conn);
             comm.CommandType = CommandType.StoredProcedure;
             SqlDataAdapter adapter = new SqlDataAdapter(comm);
 
-            //Fill db with result of query 
             DataTable dt1 = new DataTable();
             adapter.Fill(dt1);
+            Literal1.Text = dt1.Rows[0]["Revenue"].ToString();
 
-
-            GridView1.DataSource = dt1;
-            GridView1.DataBind();
             conn.Close();
         }
 
-        public void testerMethod2()
+
+        public void displayPopularLocation()
         {
-            //open db connection
             SqlConnection conn = new SqlConnection();
             string connString = ConfigurationManager.ConnectionStrings["Connection"].ConnectionString;
             conn.ConnectionString = connString;
             conn.Open();
 
-            //prepare and execute sql command
             SqlCommand comm = new SqlCommand("Dashboard_MostPopular", conn);
             comm.CommandType = CommandType.StoredProcedure;
             SqlDataAdapter adapter = new SqlDataAdapter(comm);
 
-            //Fill db with result of query 
             DataTable dt2 = new DataTable();
             adapter.Fill(dt2);
+            Literal2.Text = dt2.Rows[0]["mostPopular"].ToString();
 
+            conn.Close();
+        }
 
-            GridView2.DataSource = dt2;
-            GridView2.DataBind();
+        public void displayRedemptions()
+        {
+            SqlConnection conn = new SqlConnection();
+            string connString = ConfigurationManager.ConnectionStrings["Connection"].ConnectionString;
+            conn.ConnectionString = connString;
+            conn.Open();
+
+            SqlCommand comm = new SqlCommand("Dashboard_Redemptions", conn);
+            comm.CommandType = CommandType.StoredProcedure;
+            SqlDataAdapter adapter = new SqlDataAdapter(comm);
+
+            DataTable dt3 = new DataTable();
+            adapter.Fill(dt3);
+            Literal3.Text = dt3.Rows[0]["Redemptions"].ToString();
+
+            conn.Close();
+        }
+
+        public void displayLeastPopular()
+        {
+            SqlConnection conn = new SqlConnection();
+            string connString = ConfigurationManager.ConnectionStrings["Connection"].ConnectionString;
+            conn.ConnectionString = connString;
+            conn.Open();
+
+            SqlCommand comm = new SqlCommand("Dashboard_LeastPopular", conn);
+            comm.CommandType = CommandType.StoredProcedure;
+            SqlDataAdapter adapter = new SqlDataAdapter(comm);
+
+            DataTable dt4 = new DataTable();
+            adapter.Fill(dt4);
+            Literal4.Text = dt4.Rows[0]["leastPopular"].ToString();
+
             conn.Close();
         }
     }
