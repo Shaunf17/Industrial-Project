@@ -38,11 +38,15 @@ namespace Industrial_Project.webfroms
             if (rd.HasRows)
             {
                 rd.Read();
-
+                Session["username"] = userName.Text;
+                conn.Close();
+                conn.Dispose();
                 Response.Redirect("WebForm1.aspx");
             }
             else
             {
+                conn.Close();
+                conn.Dispose();
                 Label1.Visible = true;
             }
         }

@@ -16,6 +16,10 @@ namespace Industrial_Project
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["username"] == null)
+            {
+                Response.Redirect("Login.aspx");
+            }
             SqlConnection con = new SqlConnection();
             string connString = ConfigurationManager.ConnectionStrings["Connection"].ConnectionString;
             con.ConnectionString = connString;
