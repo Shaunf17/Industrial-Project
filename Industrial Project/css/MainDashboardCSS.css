@@ -1,4 +1,9 @@
-﻿body 
+﻿li, a {
+    font-family: Calibri;
+    font-weight: 300;
+}
+
+body 
 {
     background-color: white;
 }
@@ -44,7 +49,7 @@
 
     .SideBarMenu a {
         color: white;
-        font-size: 20px;
+        font-size: 25px;
         display: block;
         text-decoration: none;
         padding: 10px;
