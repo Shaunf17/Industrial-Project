@@ -28,7 +28,7 @@
                 <div class="col-md-4">
                     <div class="form-group">
                         <label for="outletRef">Outlet Reference</label>
-                        <asp:TextBox ID="outletReference" type='text' runat="server" CssClass="form-control"></asp:TextBox>
+                        <asp:TextBox ID="outletReference" type='text' runat="server" CssClass="form-control" Text="238"></asp:TextBox>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -36,7 +36,7 @@
                         <label for="startDate">startDate</label>
                         <div class='input-group date' id='datetimepicker1'>
                             <!--<input type='text' class="form-control" />-->
-                            <asp:TextBox ID="startingDate" type='text' runat="server" CssClass="form-control"></asp:TextBox>
+                            <asp:TextBox ID="startingDate" type='text' runat="server" CssClass="form-control" Text="2015-09-15"></asp:TextBox>
                             <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
                             </span>
                         </div>
@@ -47,7 +47,7 @@
                         <label for="endDate">endDate</label>
                         <div class='input-group date' id='datetimepicker2'>
                             <!--<input type='text' class="form-control" />-->
-                            <asp:TextBox ID="endingDate" type='text' runat="server" CssClass="form-control"></asp:TextBox>
+                            <asp:TextBox ID="endingDate" type='text' runat="server" CssClass="form-control" Text="2015-09-29"></asp:TextBox>
                             <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
                             </span>
                         </div>
@@ -62,11 +62,87 @@
         </div>
 
         <script>
+
+            //global variables
+
+            var chartData;
+            var columnData;
+
+            window.onload = function() {
+                $.ajax({
+                    url: "LoadCharts.aspx/intializeChart",
+                    data: "",
+                    dataType: "json",
+                    type: "POST",
+                    contentType: "application/json; charset=utf-8",
+                    success: OnSuccess,
+                    error: function () {
+                        alert("Error loading method!");
+                    }
+
+                }).done(function () {
+                    alert("Method worked.");
+                });
+                dbConnect("GetChartData");
+                dbConnect("GetColumnData");
+                drawChart();
+            };
+
             $(document).ready(function () {
                 $(".date").change(function () {
-                    alert("The text has been changed.");
+                    //alert("The text has been changed." + chartData);
+
+
+                    dbConnect("GetChartData");
+                    dbConnect("GetColumnData");
+                    drawChart();
                 });
             });
+
+
+            function dbConnect(str) {
+                //alert("The string is:" + str + encodeURIComponent(str));
+
+                $.ajax({
+                    url: "LoadCharts.aspx/"+str,
+                    data: "",
+                    dataType: "json",
+                    type: "POST",
+                    contentType: "application/json; charset=utf-8",
+                    success: function (data) {
+                        if (str == "GetChartData") chartData = data.d;
+                        if (str == "GetColumnData") columnData = data.d;
+                    },
+                    error: function () {
+                        alert("Error loading data!");
+                    }
+
+
+                }).done(function () {
+                    //alert("Done.");
+                });
+            }
+
+
+            function drawChart() {
+
+                // var chartData = chartData;
+
+                var ctx = document.getElementById('myChart').getContext('2d');
+
+                var myChart = new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: columnData,
+                        datasets: [{
+                            label: 'Total Sales',
+                            data: chartData,
+                            backgroundColor: "rgba(153,255,51,0.6)"
+                        }]
+                    }
+                });
+            }
+
         </script>
         <script src="../js/LoadCharts.js"></script>
         <div style="margin-left: 120px">

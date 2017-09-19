@@ -1,21 +1,4 @@
-﻿var ctx = document.getElementById('myChart').getContext('2d');
-
-var dataArray = 
-
-var myChart = new Chart(ctx, {
-    type: 'line',
-    data: {
-        labels: ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'],
-        datasets: [{
-            label: 'apples',
-            data: [0, 0, 0, 0, 0, 12, 19, 3, 17, 6, 3, 7],
-            backgroundColor: "rgba(153,255,51,0.6)"
-        }]
-    }
-});
-
-
-$(function () {
+﻿$(function () {
     var bindDatePicker = function () {
         $(".date").datetimepicker({
             format: 'YYYY-MM-DD',
@@ -35,7 +18,7 @@ $(function () {
                 date = moment().format('YYYY-MM-DD');
             }
 
-            
+
             $(this).val(date);
         });
     }
