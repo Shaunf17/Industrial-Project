@@ -1,2 +1,24 @@
-﻿body {
+﻿table{
+    border-collapse: collapse;
+    width: 100%;
+    font-family: Calibri;
+}
+th{
+    height: 40px;
+    text-align:left;
+    background-color: #fb1caf;
+    font-size: large;
+}
+td{
+    vertical-align: bottom;
+}
+th, td{
+    padding:5px;
+
+}
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+tr:hover {
+    background-color: #ffd800
 }

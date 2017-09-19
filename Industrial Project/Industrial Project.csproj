@@ -111,6 +111,7 @@
     <Content Include="css\StyleSheet1.css" />
     <Content Include="Web.config" />
     <Content Include="webfroms\Login.aspx" />
+    <Content Include="webfroms\RawData.aspx" />
     <Content Include="webfroms\tester.aspx" />
     <Content Include="webfroms\WebForm1.aspx" />
   </ItemGroup>
@@ -122,6 +123,13 @@
     </Compile>
     <Compile Include="webfroms\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webfroms\RawData.aspx.cs">
+      <DependentUpon>RawData.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webfroms\RawData.aspx.designer.cs">
+      <DependentUpon>RawData.aspx</DependentUpon>
     </Compile>
     <Compile Include="webfroms\tester.aspx.cs">
       <DependentUpon>tester.aspx</DependentUpon>
