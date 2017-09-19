@@ -37,7 +37,7 @@ namespace Industrial_Project.webfroms
                 Session["username"] = userName.Text;
                 conn.Close();
                 conn.Dispose();
-                Response.Redirect("Chart.aspx");
+                Response.Redirect("MainDashboard.aspx");
             }
             else
             {

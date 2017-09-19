@@ -123,7 +123,6 @@
     <Content Include="webfroms\RawData.aspx" />
     <Content Include="webfroms\Reports.aspx" />
     <Content Include="webfroms\Upload.aspx" />
-    <Content Include="webfroms\WebForm1.aspx" />
     <Content Include="webfroms\LoadCharts.aspx" />
     <Content Include="webfroms\tester.aspx" />
   </ItemGroup>
@@ -179,11 +178,8 @@
     <Compile Include="webfroms\Upload.aspx.designer.cs">
       <DependentUpon>Upload.aspx</DependentUpon>
     </Compile>
-    <Compile Include="webfroms\WebForm1.aspx.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
     <Compile Include="webfroms\tester.aspx.cs">
       <DependentUpon>tester.aspx</DependentUpon>
-
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="webfroms\tester.aspx.designer.cs">
