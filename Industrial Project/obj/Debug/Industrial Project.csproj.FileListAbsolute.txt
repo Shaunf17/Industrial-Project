@@ -31,3 +31,37 @@ C:\Users\Admin\Desktop\Industrial-Project\Industrial Project\bin\Microsoft.CodeD
 C:\Users\Admin\Desktop\Industrial-Project\Industrial Project\obj\Debug\Industrial Project.csprojResolveAssemblyReference.cache
 C:\Users\Admin\Desktop\Industrial-Project\Industrial Project\obj\Debug\Industrial Project.dll
 C:\Users\Admin\Desktop\Industrial-Project\Industrial Project\obj\Debug\Industrial Project.pdb
+U:\BSc Applied computing year 4\3 week project\Industrial Project\bin\ApplicationInsights.config
+U:\BSc Applied computing year 4\3 week project\Industrial Project\bin\roslyn\csc.exe
+U:\BSc Applied computing year 4\3 week project\Industrial Project\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+U:\BSc Applied computing year 4\3 week project\Industrial Project\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+U:\BSc Applied computing year 4\3 week project\Industrial Project\bin\roslyn\Microsoft.CodeAnalysis.dll
+U:\BSc Applied computing year 4\3 week project\Industrial Project\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+U:\BSc Applied computing year 4\3 week project\Industrial Project\bin\roslyn\Microsoft.CSharp.Core.targets
+U:\BSc Applied computing year 4\3 week project\Industrial Project\bin\roslyn\Microsoft.VisualBasic.Core.targets
+U:\BSc Applied computing year 4\3 week project\Industrial Project\bin\roslyn\System.Collections.Immutable.dll
+U:\BSc Applied computing year 4\3 week project\Industrial Project\bin\roslyn\System.Reflection.Metadata.dll
+U:\BSc Applied computing year 4\3 week project\Industrial Project\bin\roslyn\vbc.exe
+U:\BSc Applied computing year 4\3 week project\Industrial Project\bin\roslyn\VBCSCompiler.exe
+U:\BSc Applied computing year 4\3 week project\Industrial Project\bin\roslyn\VBCSCompiler.exe.config
+U:\BSc Applied computing year 4\3 week project\Industrial Project\bin\Industrial Project.dll.config
+U:\BSc Applied computing year 4\3 week project\Industrial Project\bin\Industrial Project.dll
+U:\BSc Applied computing year 4\3 week project\Industrial Project\bin\Industrial Project.pdb
+U:\BSc Applied computing year 4\3 week project\Industrial Project\bin\Microsoft.AI.Agent.Intercept.dll
+U:\BSc Applied computing year 4\3 week project\Industrial Project\bin\Microsoft.AI.DependencyCollector.dll
+U:\BSc Applied computing year 4\3 week project\Industrial Project\bin\Microsoft.AI.PerfCounterCollector.dll
+U:\BSc Applied computing year 4\3 week project\Industrial Project\bin\Microsoft.AI.ServerTelemetryChannel.dll
+U:\BSc Applied computing year 4\3 week project\Industrial Project\bin\Microsoft.AI.Web.dll
+U:\BSc Applied computing year 4\3 week project\Industrial Project\bin\Microsoft.AI.WindowsServer.dll
+U:\BSc Applied computing year 4\3 week project\Industrial Project\bin\Microsoft.ApplicationInsights.dll
+U:\BSc Applied computing year 4\3 week project\Industrial Project\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+U:\BSc Applied computing year 4\3 week project\Industrial Project\bin\Microsoft.AI.DependencyCollector.xml
+U:\BSc Applied computing year 4\3 week project\Industrial Project\bin\Microsoft.AI.ServerTelemetryChannel.xml
+U:\BSc Applied computing year 4\3 week project\Industrial Project\bin\Microsoft.AI.Web.xml
+U:\BSc Applied computing year 4\3 week project\Industrial Project\bin\Microsoft.AI.WindowsServer.xml
+U:\BSc Applied computing year 4\3 week project\Industrial Project\bin\Microsoft.ApplicationInsights.xml
+U:\BSc Applied computing year 4\3 week project\Industrial Project\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+U:\BSc Applied computing year 4\3 week project\Industrial Project\obj\Debug\Industrial Project.csprojResolveAssemblyReference.cache
+U:\BSc Applied computing year 4\3 week project\Industrial Project\obj\Debug\Industrial Project.csproj.CoreCompileInputs.cache
+U:\BSc Applied computing year 4\3 week project\Industrial Project\obj\Debug\Industrial Project.dll
+U:\BSc Applied computing year 4\3 week project\Industrial Project\obj\Debug\Industrial Project.pdb

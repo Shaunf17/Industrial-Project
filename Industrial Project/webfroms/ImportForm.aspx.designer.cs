@@ -10,7 +10,7 @@
 namespace Industrial_Project.webfroms {
     
     
-    public partial class Upload {
+    public partial class WebForm2 {
         
         /// <summary>
         /// form1 control.

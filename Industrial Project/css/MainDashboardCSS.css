@@ -4,20 +4,21 @@
 
 }
 
-body 
-{
+body {
     background-color: white;
     margin: auto;
+    font-family: Calibri;
+    font-weight: 300;
 }
 
 .Header {
     margin-top: 0px;
     width: 100%;
     background-color: #fb1caf;
+    height: 15%;
 }
 
 .SideBar {
-
     height: 100%;
     margin-left: 0;
     width: 10%;
@@ -31,15 +32,6 @@ body
     margin: 5px;
 }
 
-/*.SubHeader {
-    margin-left: 10%;
-    height: 9%;
-    width: 100%;
-    background-color: #b6dfff;
-    position: absolute;
-    position: fixed;
-}*/
-
 #SideBarTop {
     height: 9%;
 
@@ -51,7 +43,7 @@ body
 
     .SideBarMenu a {
         color: white;
-        font-size: 1.4vw; /*Originally 25px*/
+        font-size: 1.2vw; /*Originally 25px*/
         display: block;
         text-decoration: none;
         padding: 10px;
@@ -78,10 +70,12 @@ body
 .SubHeader {
     background-color: #b6dfff;
     margin-left: 10%;
-    height: 9%;
+    height: 10%;
     width: 100%;
     position: absolute;
     padding-left: 7%;
+    padding-top: 1%;
+    padding-bottom: 3%;
     /*padding-top: 1.5%;*/
     
 }
@@ -91,7 +85,7 @@ body
         color: #424242;
         margin-right: 10%;
         font-size: 1.4vw; /*Originally 25px*/
-        margin-top: 1.2%;
+       
     }
 
 
