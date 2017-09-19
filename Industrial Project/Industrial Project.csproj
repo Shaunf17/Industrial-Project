@@ -98,6 +98,7 @@
     <Content Include="css\LoginCss.css" />
     <Content Include="css\MainDashboardCSS.css" />
     <Content Include="css\UploadCSS.css" />
+    <Content Include="js\LoadCharts.js" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -115,6 +116,7 @@
     <Content Include="Pictures\Union_logo_NO_BG.png" />
     <Content Include="Pictures\Yoyo_logo_white_NO_BG.png" />
     <Content Include="Web.config" />
+
     <Content Include="webfroms\ImportForm.aspx" />
     <Content Include="webfroms\Login.aspx" />
     <Content Include="webfroms\MainDashboard.aspx" />
@@ -122,6 +124,8 @@
     <Content Include="webfroms\Reports.aspx" />
     <Content Include="webfroms\Upload.aspx" />
     <Content Include="webfroms\WebForm1.aspx" />
+    <Content Include="webfroms\LoadCharts.aspx" />
+    <Content Include="webfroms\tester.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -131,6 +135,14 @@
     </Compile>
     <Compile Include="webfroms\ImportForm.aspx.designer.cs">
       <DependentUpon>ImportForm.aspx</DependentUpon>
+       </Compile>
+     <Compile Include="webfroms\LoadCharts.aspx.cs">
+      <DependentUpon>LoadCharts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webfroms\LoadCharts.aspx.designer.cs">
+      <DependentUpon>LoadCharts.aspx</DependentUpon>
+
     </Compile>
     <Compile Include="webfroms\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
@@ -169,10 +181,13 @@
     </Compile>
     <Compile Include="webfroms\WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
+    <Compile Include="webfroms\tester.aspx.cs">
+      <DependentUpon>tester.aspx</DependentUpon>
+
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="webfroms\WebForm1.aspx.designer.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
+    <Compile Include="webfroms\tester.aspx.designer.cs">
+      <DependentUpon>tester.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <PropertyGroup>

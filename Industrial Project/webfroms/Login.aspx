@@ -37,9 +37,11 @@
         </div>
     </div>
 
+
     <div class ="ImageContainer">
         <img id="UnionLogo" src="../Pictures/Union_logo_NO_BG.png" />
         <img id="YoyoLogo"src="../Pictures/Yoyo_logo_NO_BG.png" />
     </div>
+
 </body>
 </html>
