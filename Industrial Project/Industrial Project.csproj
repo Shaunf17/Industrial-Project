@@ -116,8 +116,6 @@
     <Content Include="Pictures\Union_logo_NO_BG.png" />
     <Content Include="Pictures\Yoyo_logo_white_NO_BG.png" />
     <Content Include="Web.config" />
-
-    <Content Include="webfroms\ImportForm.aspx" />
     <Content Include="webfroms\Login.aspx" />
     <Content Include="webfroms\MainDashboard.aspx" />
     <Content Include="webfroms\RawData.aspx" />
@@ -128,20 +126,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="webfroms\ImportForm.aspx.cs">
-      <DependentUpon>ImportForm.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="webfroms\ImportForm.aspx.designer.cs">
-      <DependentUpon>ImportForm.aspx</DependentUpon>
-       </Compile>
-     <Compile Include="webfroms\LoadCharts.aspx.cs">
+    <Compile Include="webfroms\LoadCharts.aspx.cs">
       <DependentUpon>LoadCharts.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="webfroms\LoadCharts.aspx.designer.cs">
       <DependentUpon>LoadCharts.aspx</DependentUpon>
-
     </Compile>
     <Compile Include="webfroms\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
