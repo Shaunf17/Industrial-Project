@@ -7,7 +7,7 @@
     <link href="../css/LoginCss.css" rel="stylesheet" />
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
-    <title></title>
+    <title>Log in</title>
 </head>
 <body id="body">
     <div class="container">
@@ -35,6 +35,12 @@
 
             </div>
         </div>
+    </div>
+
+
+    <div class ="ImageContainer">
+        <img id="UnionLogo" src="../Pictures/Union_logo_NO_BG.png" />
+        <img id="YoyoLogo"src="../Pictures/Yoyo_logo_NO_BG.png" />
     </div>
 
 </body>

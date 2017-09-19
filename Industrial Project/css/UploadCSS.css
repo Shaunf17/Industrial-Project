@@ -1,0 +1,43 @@
+﻿
+.UploadContent {
+    position: absolute;
+    margin-left: 45%;
+    margin-top: 14%;
+    text-align: center;
+    width: 438.625px;
+
+}
+
+.UploadButton {
+    width: 100px;
+    height: 50px;
+    border-radius: 7px;
+    background-color: #88cbff;
+    border: 0 solid #88cbff;
+    color: white;
+    font-size: 17px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+}
+
+    .UploadButton:hover {
+        background-color: #5db7fd;
+        border: 0 solid #5db7fd;
+    }
+
+.UploadIcon {
+    font-size: 100px;
+    color: blue;
+    margin-bottom: -20px;
+    margin-left: 20px;
+}
+
+.ChooseFile {
+    background-color: #8c9ff6;
+    padding: 20px;
+    padding-left: 130px;
+    border-radius: 7px;
+    color: white;
+}
+

@@ -1,0 +1,92 @@
+﻿li, a {
+    font-family: Calibri;
+    font-weight: 300;
+
+}
+
+body {
+    background-color: white;
+    margin: auto;
+    font-family: Calibri;
+    font-weight: 300;
+}
+
+.Header {
+    margin-top: 0px;
+    width: 100%;
+    background-color: #fb1caf;
+    height: 15%;
+}
+
+.SideBar {
+    height: 100%;
+    margin-left: 0;
+    width: 10%;
+    background-color: #5571f8;
+    position: absolute;
+}
+
+#YoyoLogo {
+    width: 15%;
+    height: 15%;
+    margin: 5px;
+}
+
+#SideBarTop {
+    height: 9%;
+
+}
+
+.SideBarMenu {
+    
+}
+
+    .SideBarMenu a {
+        color: white;
+        font-size: 1.2vw; /*Originally 25px*/
+        display: block;
+        text-decoration: none;
+        padding: 10px;
+        margin-bottom: 5px;
+        padding-left: 10px;
+    }
+
+        .SideBarMenu a:hover {
+            background-color: #8c9ff6;
+            text-decoration: none;
+            color: white;
+        }
+
+        .SideBarMenu a.active {
+            background-color: #1d44f9;
+            color: white;
+        }
+
+.SideBarMenu span {
+    margin-right: 18px;
+
+}
+
+.SubHeader {
+    background-color: #b6dfff;
+    margin-left: 10%;
+    height: 10%;
+    width: 100%;
+    position: absolute;
+    padding-left: 7%;
+    padding-top: 1%;
+    padding-bottom: 3%;
+    /*padding-top: 1.5%;*/
+    
+}
+
+    .GraphOptions li {
+        display: inline-block;
+        color: #424242;
+        margin-right: 10%;
+        font-size: 1.4vw; /*Originally 25px*/
+       
+    }
+
+
+

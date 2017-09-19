@@ -1,4 +1,3 @@
-
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +14,7 @@ using System.Data.SqlClient;
 namespace Industrial_Project.webfroms
 {
 
-    public partial class WebForm2 : System.Web.UI.Page
+    public partial class Upload : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
