@@ -1,11 +1,13 @@
 ﻿li, a {
     font-family: Calibri;
     font-weight: 300;
+
 }
 
 body 
 {
     background-color: white;
+    margin: auto;
 }
 
 .Header {
@@ -49,7 +51,7 @@ body
 
     .SideBarMenu a {
         color: white;
-        font-size: 25px;
+        font-size: 1.4vw; /*Originally 25px*/
         display: block;
         text-decoration: none;
         padding: 10px;
@@ -73,21 +75,23 @@ body
 
 }
 
-.GraphOptions {
+.SubHeader {
     background-color: #b6dfff;
     margin-left: 10%;
     height: 9%;
     width: 100%;
     position: absolute;
     padding-left: 7%;
-    padding-top: 1.5%;
+    /*padding-top: 1.5%;*/
+    
 }
 
     .GraphOptions li {
         display: inline-block;
         color: #424242;
         margin-right: 10%;
-        font-size: 25px;
+        font-size: 1.4vw; /*Originally 25px*/
+        margin-top: 1.2%;
     }
 
 
