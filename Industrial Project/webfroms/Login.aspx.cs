@@ -1,13 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
-using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace Industrial_Project.webfroms
 {
@@ -27,6 +22,7 @@ namespace Industrial_Project.webfroms
             
             SqlCommand com = new SqlCommand("CheckUser",conn);
             com.CommandType = System.Data.CommandType.StoredProcedure;
+            
             SqlParameter username= new SqlParameter("username", userName.Text);
             SqlParameter password = new SqlParameter("password", Hash(userPassword.Text));
             //Label1.Text = (Hash(userPassword.Text));
@@ -41,7 +37,7 @@ namespace Industrial_Project.webfroms
                 Session["username"] = userName.Text;
                 conn.Close();
                 conn.Dispose();
-                Response.Redirect("WebForm1.aspx");
+                Response.Redirect("Chart.aspx");
             }
             else
             {
