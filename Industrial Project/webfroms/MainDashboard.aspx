@@ -19,10 +19,10 @@
 
     <div class="SubHeader">
         <ul class ="GraphOptions">
-            <li>Time Frame</li>
-            <li>Location</li>
-            <li>Date Range</li>
-            <li>Chart Type</li>
+            <li>Time Frame <span class="glyphicon glyphicon-menu-down"></span></li>
+            <li>Location <span class="glyphicon glyphicon-menu-down"></span></li>
+            <li>Date Range <span class="glyphicon glyphicon-menu-down"></span></li>
+            <li>Chart Type <span class="glyphicon glyphicon-menu-down"></span></li>
         </ul>
 
     </div>

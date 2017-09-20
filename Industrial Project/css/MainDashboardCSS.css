@@ -15,7 +15,8 @@ body {
     margin-top: 0px;
     width: 100%;
     background-color: #fb1caf;
-    height: 15%;
+    height: 25%;
+    position: relative; /*CHANGE*/
 }
 
 .SideBar {
@@ -30,6 +31,7 @@ body {
     width: 15%;
     height: 15%;
     margin: 5px;
+    position: relative;
 }
 
 #SideBarTop {
@@ -69,24 +71,40 @@ body {
 
 .SubHeader {
     background-color: #b6dfff;
-    margin-left: 10%;
-    height: 10%;
     width: 100%;
     position: absolute;
-    padding-left: 7%;
-    padding-top: 1%;
-    padding-bottom: 3%;
+    padding-left: 10%;
     /*padding-top: 1.5%;*/
     
 }
 
+.GraphOptions {
+    margin: auto;
+}
+
     .GraphOptions li {
+        font-weight: 100;
         display: inline-block;
-        color: #424242;
-        margin-right: 10%;
+        color: #636363;
+        margin-left: 8%;
         font-size: 1.4vw; /*Originally 25px*/
+        border-left: 1px solid #99cbf2;
+        border-right: 1px solid #99cbf2;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 2%;
+        padding-right: 2%;
        
     }
+
+        .GraphOptions li:hover {
+            background-color: #99cbf2;
+        }
+
+.GraphOptions span {
+    font-size: 0.8vw;
+    margin-left: 5px;
+}
 
 
 
