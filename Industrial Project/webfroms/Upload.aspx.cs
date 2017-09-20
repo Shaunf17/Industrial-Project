@@ -18,6 +18,7 @@ namespace Industrial_Project.webfroms
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            // Checks if the user is logged in.
             if (Session["username"] == null)
             {
                 Response.Redirect("Login.aspx");
@@ -25,6 +26,16 @@ namespace Industrial_Project.webfroms
 
         }
 
+        /// <summary>
+        /// Logs out the user and deletes the session.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void LogOut_click(object sender, EventArgs e)
+        {
+            Session["username"] = null;
+            Response.Redirect("Login.aspx");
+        }
 
         /// <summary>
         ///  Action taken when the upload button is pressed.

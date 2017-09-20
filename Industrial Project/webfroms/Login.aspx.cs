@@ -10,7 +10,11 @@ namespace Industrial_Project.webfroms
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-        
+            // Checks if the user is logged in.
+            if (Session["username"] != null)
+            {
+                Response.Redirect("MainDashboard.aspx");
+            }
         }
 
         protected void Btnlogin_click(object sender, EventArgs e)

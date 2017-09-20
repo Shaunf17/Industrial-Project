@@ -33,6 +33,9 @@
             <a href="Reports.aspx"><span class="glyphicon glyphicon-stats"></span>Reports</a>
             <a href="RawData.aspx" class ="active"><span class="glyphicon glyphicon-th-list"></span>Raw Data</a>
             <a href="Upload.aspx"><span class="glyphicon glyphicon-upload"></span>Upload</a>
+            <form runat="server">
+            <asp:LinkButton ID="LogOut" onclick="LogOut_click" runat="server"><span class="glyphicon glyphicon-log-out"></span>Logout</asp:LinkButton>
+            </form>
         </div>
     </div>
 </body>

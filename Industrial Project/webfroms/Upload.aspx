@@ -17,7 +17,7 @@
         <img id="YoyoLogo" src="../Pictures/Yoyo_logo_white_NO_BG.png" />
 
     </div>
-
+    <form id="Form1" runat="server">
     <div class ="SideBar">
         <div id ="SideBarTop"></div>
         <div class ="SideBarMenu">
@@ -25,6 +25,8 @@
             <a href="Reports.aspx"><span class="glyphicon glyphicon-stats"></span>Reports</a>
             <a href="RawData.aspx"><span class="glyphicon glyphicon-th-list"></span>Raw Data</a>
             <a href="Upload.aspx" class ="active"><span class="glyphicon glyphicon-upload"></span>Upload</a>
+            <asp:LinkButton ID="LogOut" onclick="LogOut_click" runat="server"><span class="glyphicon glyphicon-log-out"></span>Logout</asp:LinkButton>
+           
         </div>
     </div>
 
@@ -32,7 +34,6 @@
         <div class ="UploadIcon">
             <span class="glyphicon glyphicon-level-up"></span>
         </div>
-        <form id="form1" runat="server">
                 <asp:Panel ID="Panel1" runat="server">
                     <div class="ChooseFile">
                         <asp:FileUpload ID="FileUpload" runat="server" />
@@ -42,7 +43,7 @@
                     <asp:Label ID="lblMessage" runat="server" Text="" />
                     <asp:PlaceHolder ID = "PlaceHolder1" runat="server" />
                 </asp:Panel>
-        </form>
     </div>
+        </form>
 </body>
 </html>
