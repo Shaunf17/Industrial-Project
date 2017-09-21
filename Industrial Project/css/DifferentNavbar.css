@@ -1,0 +1,79 @@
+﻿
+.nav {
+    position:absolute;
+
+    background-color: black;
+    color: white;
+    height: 100%;
+    padding-top: 2rem;
+    width: 3rem;
+}
+
+.linkText {
+    visibility: hidden;
+}
+
+.nav-link {
+    color: white;
+    font-size: 1.1rem;
+    margin-top: 1rem;
+}
+
+#YoyoLogo {
+
+    width: 2rem;
+    height: 2rem;
+    margin-left: 0.6rem;
+    margin-bottom: 02rem;
+}
+
+.nav-link:hover {
+    color: white;
+    background-color: #808080;
+}
+
+#active {
+    color: white;
+    background-color: #808080;
+    text-decoration: underline;
+}
+
+.fa {
+    margin-right: 0.4rem;
+}
+
+.container-fluid {
+    margin-left: 3rem;
+    height: 100%;
+    padding:0;
+}
+
+.row
+{
+    margin:0;
+    width:100%;
+}
+
+@media (min-width: 992px) {
+    .nav {
+        width: 9rem;
+    }
+
+    .linkText {
+        visibility: visible;
+    }
+
+   #YoyoLogo {
+
+    width: 4rem;
+    height: 4rem;
+    margin-left: 2.5rem;
+    margin-bottom: 02rem;
+}
+
+    .container-fluid {
+        margin-left: 9rem;
+        height: 100%;
+        padding:0;
+    }
+}

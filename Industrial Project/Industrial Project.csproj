@@ -116,6 +116,7 @@
     <Content Include="Pictures\Union_logo_NO_BG.png" />
     <Content Include="Pictures\Yoyo_logo_white_NO_BG.png" />
     <Content Include="Web.config" />
+    <Content Include="webfroms\DifferentNavigation.aspx" />
     <Content Include="webfroms\Login.aspx" />
     <Content Include="webfroms\MainDashboard.aspx" />
     <Content Include="webfroms\RawData.aspx" />
@@ -126,6 +127,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="webfroms\DifferentNavigation.aspx.cs">
+      <DependentUpon>DifferentNavigation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webfroms\DifferentNavigation.aspx.designer.cs">
+      <DependentUpon>DifferentNavigation.aspx</DependentUpon>
+    </Compile>
     <Compile Include="webfroms\LoadCharts.aspx.cs">
       <DependentUpon>LoadCharts.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
