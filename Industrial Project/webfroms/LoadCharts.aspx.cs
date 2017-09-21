@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Web;
@@ -14,78 +15,132 @@ namespace Industrial_Project.webfroms
 {
     public partial class LoadCharts : System.Web.UI.Page
     {
-        StringBuilder table = new StringBuilder();
-
-        protected static double myData;
+        protected static List<double> myData = new List<double>();
+        protected static List<string> columnData = new List<string>();
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            Debug.WriteLine("PAGE LOADED !");
 
-        }
-
-        [WebMethod]
-        public void intializeChart()
-        {
             SqlConnection con = new SqlConnection();
             string connString = ConfigurationManager.ConnectionStrings["Connection"].ConnectionString;
             con.ConnectionString = connString;
+
+            SqlCommand cmd = new SqlCommand("GetLocations", con);
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+            con.Open();
+            SqlDataReader rd = cmd.ExecuteReader();
+            while(rd.Read())
+            {
+                outletLocation.Items.Add(rd[0].ToString());
+            }
+
+            con.Close();
+            con.Dispose();
+
+
+        }
+
+        private static string printArr(List<double> array)
+        {
+
+            string res = "";
+            foreach (double x in array)
+            {
+                Console.WriteLine(x);
+                res += x + " ; ";
+            }
+            return res;
+        }
+
+        protected static double execProcedure(string outR, DateTime sDate, DateTime eDate)
+        {
+            double value = 1; 
+            SqlConnection con = new SqlConnection();
+            string connString = ConfigurationManager.ConnectionStrings["Connection"].ConnectionString;
+            con.ConnectionString = connString;
+
             SqlCommand cmd = new SqlCommand("TotalSales", con);
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
-            SqlParameter outletRef = new SqlParameter("outletRef", outletReference.Text);
-            SqlParameter startDate = new SqlParameter("startDate", startingDate.Text);
-            SqlParameter endDate = new SqlParameter("endDate", endingDate.Text);
-            cmd.Parameters.Add(outletRef);
-            cmd.Parameters.Add(startDate);
-            cmd.Parameters.Add(endDate);
             con.Open();
+
+            Debug.WriteLine("sDate value: " + sDate.Date.ToString("yyyy-MM-dd"));
+            Debug.WriteLine("eDate value: " + eDate.Date.ToString("yyyy-MM-dd"));
+            Debug.WriteLine("sDate + 1 value: " + sDate.AddMonths(1).Date.ToString("yyyy-MM-dd"));
+
+            cmd.Parameters.Add(new SqlParameter("location", outR));
+            cmd.Parameters.Add(new SqlParameter("startDate", sDate.Date.ToString("yyyy-MM-dd")));
+            cmd.Parameters.Add(new SqlParameter("endDate", eDate.Date.ToString("yyyy-MM-dd")));
 
             SqlDataReader rd = cmd.ExecuteReader();
             if (rd.HasRows)
             {
-                //chartData = rd.GetInt32(0);
                 rd.Read();
-                myData = double.Parse(rd[0].ToString());
-
-                con.Close();
-                con.Dispose();
+                value = double.Parse(rd[0].ToString());
             }
             else
             {
-                Label1.Text = "Doesn't have any rows.";
-                con.Close();
-                con.Dispose();
+                Debug.WriteLine("DIDN'T WORK");
+                value = -1;
             }
+            cmd.Dispose();
+            con.Close();
+            con.Dispose();
+            return value;
+        }
+
+        [WebMethod]
+        public static List<double> initializeChart(string outR, string startDat, string endDat)
+        {
+            Debug.WriteLine(" METHOD ENTERED !" + outR);
+
+            DateTime sDate = DateTime.ParseExact(startDat, "yyyy-MM-dd", null);
+            DateTime endingDate = DateTime.ParseExact(endDat, "yyyy-MM-dd", null);
+            int result = DateTime.Compare(sDate, endingDate);
+
+            myData.Clear();
+            while(sDate <= endingDate)
+            {
+                myData.Add(execProcedure(outR, sDate, sDate.AddMonths(1)));
+                sDate = sDate.AddMonths(1);
+            }
+
+            Debug.WriteLine("The chart numbers array: " + printArr(myData));
+            return myData;
+            
+            /*
+            Debug.WriteLine("sDate value: " + sDate.Date.ToString("yyyy-MM-dd"));
+            Debug.WriteLine("eDate value: " + eDate.Date.ToString("yyyy-MM-dd"));
+            Debug.WriteLine("sDate + 1 value: " + sDate.AddMonths(1).Date.ToString("yyyy-MM-dd"));
+            Debug.WriteLine(" WORKING WORKING WORKING WORKING WORKING ! 2x");
+            Debug.WriteLine(" WORKING WORKING WORKING WORKING WORKING ! 3x");*/
         }
 
 
         [WebMethod]
         [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
-        public static List<double> GetChartData()
+        public static List<string> GetColumnData(string outR, string startDat, string endDat)
         {
-            List<double> items = new List<double>();
-            items.Add(1.23);
-            items.Add(4.56);
-            items.Add(350);
-            items.Add(1.23);
-            items.Add(4.56);
-            items.Add(7.89);
-            items.Add(myData);
-            items.Add(4.56);
-            items.Add(7.89);
-            items.Add(1.23);
-            items.Add(4.56);
-            items.Add(7.89);
-            return items;
-
+            //string[] array = new string[] { "09/16", "FEB", "MAR", "APR", "MAY", "JUN", "02/17", "AUG", "SEP", "OCT", "NOV", "DEC" };
+            DateTime sDate = DateTime.ParseExact(startDat, "yyyy-MM-dd", null);
+            DateTime eDate = DateTime.ParseExact(endDat, "yyyy-MM-dd", null);
+            //Debug.WriteLine(sDate + "" + eDate);
+            columnData.Clear();
+            while (sDate <= eDate)
+            {
+                columnData.Add(sDate.Date.ToString("yyyy-MM"));
+                sDate = sDate.AddMonths(1);
+                //Debug.WriteLine(sDate.Date);
+            }
+            
+            string combindedString = string.Join(",", columnData.ToArray());
+            Debug.WriteLine("Dates array: "+combindedString);
+            return columnData;
         }
-        [WebMethod]
-        [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
-        public static string[] GetColumnData()
-        {
-            string[] array = new string[] { "JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC" };
-            return array;
 
-        }
     }
+
+
 }
