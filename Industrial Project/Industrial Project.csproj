@@ -98,7 +98,10 @@
     <Content Include="css\LoginCss.css" />
     <Content Include="css\MainDashboardCSS.css" />
     <Content Include="css\UploadCSS.css" />
+    <Content Include="js\analytics.js" />
+    <Content Include="js\Chart.bundle.js" />
     <Content Include="js\LoadCharts.js" />
+    <Content Include="js\utils.js" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
