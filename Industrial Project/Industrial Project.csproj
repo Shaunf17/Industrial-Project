@@ -119,6 +119,7 @@
     <Content Include="webfroms\DifferentNavigation.aspx" />
     <Content Include="webfroms\Login.aspx" />
     <Content Include="webfroms\MainDashboard.aspx" />
+    <Content Include="webfroms\OldChartDataRange.aspx" />
     <Content Include="webfroms\RawData.aspx" />
     <Content Include="webfroms\Reports.aspx" />
     <Content Include="webfroms\Upload.aspx" />
@@ -154,6 +155,13 @@
     </Compile>
     <Compile Include="webfroms\MainDashboard.aspx.designer.cs">
       <DependentUpon>MainDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webfroms\OldChartDataRange.aspx.cs">
+      <DependentUpon>OldChartDataRange.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webfroms\OldChartDataRange.aspx.designer.cs">
+      <DependentUpon>OldChartDataRange.aspx</DependentUpon>
     </Compile>
     <Compile Include="webfroms\RawData.aspx.cs">
       <DependentUpon>RawData.aspx</DependentUpon>

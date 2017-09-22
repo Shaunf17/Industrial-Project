@@ -31,15 +31,6 @@ namespace Industrial_Project.webfroms {
         protected global::System.Web.UI.WebControls.PlaceHolder PlaceHolder1;
         
         /// <summary>
-        /// outletLocation control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList outletLocation;
-        
-        /// <summary>
         /// startingDate control.
         /// </summary>
         /// <remarks>
@@ -58,12 +49,12 @@ namespace Industrial_Project.webfroms {
         protected global::System.Web.UI.WebControls.TextBox endingDate;
         
         /// <summary>
-        /// Label1 control.
+        /// outletLocation control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.WebControls.ListBox outletLocation;
     }
 }

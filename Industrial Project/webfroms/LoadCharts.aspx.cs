@@ -31,7 +31,7 @@ namespace Industrial_Project.webfroms
 
             con.Open();
             SqlDataReader rd = cmd.ExecuteReader();
-            while(rd.Read())
+            while (rd.Read())
             {
                 outletLocation.Items.Add(rd[0].ToString());
             }
@@ -56,7 +56,7 @@ namespace Industrial_Project.webfroms
 
         protected static double execProcedure(string outR, DateTime sDate, DateTime eDate)
         {
-            double value = 1; 
+            double value = 1;
             SqlConnection con = new SqlConnection();
             string connString = ConfigurationManager.ConnectionStrings["Connection"].ConnectionString;
             con.ConnectionString = connString;
@@ -73,55 +73,93 @@ namespace Industrial_Project.webfroms
             cmd.Parameters.Add(new SqlParameter("location", outR));
             cmd.Parameters.Add(new SqlParameter("startDate", sDate.Date.ToString("yyyy-MM-dd")));
             cmd.Parameters.Add(new SqlParameter("endDate", eDate.Date.ToString("yyyy-MM-dd")));
+            try
+            {
+                SqlDataReader rd = cmd.ExecuteReader();
+                if (rd.HasRows)
+                {
+                    rd.Read();
+                    if (rd[0] == null)
+                    {
+                        value = -1;
 
-            SqlDataReader rd = cmd.ExecuteReader();
-            if (rd.HasRows)
-            {
-                rd.Read();
-                value = double.Parse(rd[0].ToString());
+                        Debug.WriteLine("EMPTY");
+                        cmd.Dispose();
+                        con.Close();
+                        con.Dispose();
+                        return -1;
+                    }
+                    value = double.Parse(rd[0].ToString());
+                }
+                else
+                {
+                    value = -1;
+                }
+                cmd.Dispose();
+                con.Close();
+                con.Dispose();
             }
-            else
+            catch (Exception)
             {
-                Debug.WriteLine("DIDN'T WORK");
                 value = -1;
             }
-            cmd.Dispose();
-            con.Close();
-            con.Dispose();
+
             return value;
         }
+
 
         [WebMethod]
         public static List<double> initializeChart(string outR, string startDat, string endDat)
         {
             Debug.WriteLine(" METHOD ENTERED !" + outR);
 
-            DateTime sDate = DateTime.ParseExact(startDat, "yyyy-MM-dd", null);
-            DateTime endingDate = DateTime.ParseExact(endDat, "yyyy-MM-dd", null);
-            int result = DateTime.Compare(sDate, endingDate);
+            //DateTime sDate = DateTime.ParseExact(startDat, "yyyy-MM-dd", null);
+            //DateTime endingDate = DateTime.ParseExact(endDat, "yyyy-MM-dd", null);
+            //int result = DateTime.Compare(sDate, endingDate);
 
             myData.Clear();
-            while(sDate <= endingDate)
-            {
-                myData.Add(execProcedure(outR, sDate, sDate.AddMonths(1)));
-                sDate = sDate.AddMonths(1);
-            }
 
-            Debug.WriteLine("The chart numbers array: " + printArr(myData));
+            SqlConnection con = new SqlConnection();
+            string connString = ConfigurationManager.ConnectionStrings["Connection"].ConnectionString;
+            con.ConnectionString = connString;
+
+            SqlCommand cmd = new SqlCommand("TotalSalesPerMonthOfDataRange", con);
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+            cmd.Parameters.Add(new SqlParameter("location", outR));
+            cmd.Parameters.Add(new SqlParameter("startDate", startDat));
+            cmd.Parameters.Add(new SqlParameter("endDate", endDat));
+
+            con.Open();
+            try
+            {
+                SqlDataReader rd = cmd.ExecuteReader();
+                while (rd.Read())
+                {
+                   myData.Add(double.Parse(rd[0].ToString()));
+                }
+
+                con.Close();
+                con.Dispose();
+
+                /*myData.Add(execProcedure(outR, sDate, sDate.AddMonths(1)));
+                    sDate = sDate.AddMonths(1);*/
+
+
+                Debug.WriteLine("The chart numbers array: " + printArr(myData));
+            }
+            catch (Exception)
+            {
+                myData.Add(-1);
+            }
             return myData;
-            
-            /*
-            Debug.WriteLine("sDate value: " + sDate.Date.ToString("yyyy-MM-dd"));
-            Debug.WriteLine("eDate value: " + eDate.Date.ToString("yyyy-MM-dd"));
-            Debug.WriteLine("sDate + 1 value: " + sDate.AddMonths(1).Date.ToString("yyyy-MM-dd"));
-            Debug.WriteLine(" WORKING WORKING WORKING WORKING WORKING ! 2x");
-            Debug.WriteLine(" WORKING WORKING WORKING WORKING WORKING ! 3x");*/
+
         }
 
 
         [WebMethod]
         [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
-        public static List<string> GetColumnData(string outR, string startDat, string endDat)
+        public static string[] GetColumnData(string outR, string startDat, string endDat)
         {
             //string[] array = new string[] { "09/16", "FEB", "MAR", "APR", "MAY", "JUN", "02/17", "AUG", "SEP", "OCT", "NOV", "DEC" };
             DateTime sDate = DateTime.ParseExact(startDat, "yyyy-MM-dd", null);
@@ -134,10 +172,10 @@ namespace Industrial_Project.webfroms
                 sDate = sDate.AddMonths(1);
                 //Debug.WriteLine(sDate.Date);
             }
-            
+
             string combindedString = string.Join(",", columnData.ToArray());
-            Debug.WriteLine("Dates array: "+combindedString);
-            return columnData;
+            Debug.WriteLine("Dates array: " + combindedString);
+            return columnData.ToArray();
         }
 
     }
