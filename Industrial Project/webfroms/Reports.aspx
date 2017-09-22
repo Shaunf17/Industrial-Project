@@ -12,10 +12,6 @@
     <title>Reports</title>
 </head>
 <body>
-    <div class="Header">
-        <img id="YoyoLogo" src="../Pictures/Yoyo_logo_white_NO_BG.png" />
-
-    </div>
 
     <div class="SubHeader">
         <ul class ="GraphOptions">
@@ -27,7 +23,7 @@
     </div>
 
     <div class ="SideBar">
-        <div id ="SideBarTop"></div>
+        <img id="YoyoLogo" src="../Pictures/Yoyo_white_Logo.png" />
         <div class ="SideBarMenu">
             <a href="MainDashboard.aspx"><span class="glyphicon glyphicon-th-large"></span>Dashboard</a>
             <a href="Reports.aspx" class ="active"><span class="glyphicon glyphicon-stats"></span>Reports</a>

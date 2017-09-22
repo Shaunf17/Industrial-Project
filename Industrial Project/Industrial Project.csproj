@@ -115,6 +115,7 @@
     <Content Include="css\StyleSheet1.css" />
     <Content Include="Pictures\Union_logo_NO_BG.png" />
     <Content Include="Pictures\Yoyo_logo_white_NO_BG.png" />
+    <Content Include="Pictures\Yoyo_white_Logo.png" />
     <Content Include="Web.config" />
     <Content Include="webfroms\Login.aspx" />
     <Content Include="webfroms\MainDashboard.aspx" />

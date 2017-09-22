@@ -11,36 +11,24 @@ body {
     font-weight: 300;
 }
 
-.Header {
-    margin-top: 0px;
-    width: 100%;
-    background-color: #fb1caf;
-    height: 25%;
-    position: relative; /*CHANGE*/
-}
-
 .SideBar {
     height: 100%;
     margin-left: 0;
     width: 10%;
-    background-color: #5571f8;
+    background-color: #131313;
     position: absolute;
+    box-shadow: 1px 0px 8px #888888;
 }
 
 #YoyoLogo {
-    width: 15%;
-    height: 15%;
-    margin: 5px;
-    position: relative;
-}
-
-#SideBarTop {
-    height: 9%;
-
+    width: 5vw;
+    height: 5vw;
+    margin-top: 1vw;
+    margin-left: 25%;
 }
 
 .SideBarMenu {
-    
+    margin-top: 1vw;
 }
 
     .SideBarMenu a {
@@ -54,13 +42,13 @@ body {
     }
 
         .SideBarMenu a:hover {
-            background-color: #8c9ff6;
+            background-color: #323232;
             text-decoration: none;
             color: white;
         }
 
         .SideBarMenu a.active {
-            background-color: #1d44f9;
+            background-color: #545454;
             color: white;
         }
 

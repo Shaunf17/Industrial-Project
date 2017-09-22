@@ -13,13 +13,10 @@
     <title>Upload</title>
 </head>
 <body>
-    <div class="Header">
-        <img id="YoyoLogo" src="../Pictures/Yoyo_logo_white_NO_BG.png" />
 
-    </div>
     <form id="Form1" runat="server">
     <div class ="SideBar">
-        <div id ="SideBarTop"></div>
+        <img id="YoyoLogo" src="../Pictures/Yoyo_white_Logo.png" />
         <div class ="SideBarMenu">
             <a href="MainDashboard.aspx"><span class="glyphicon glyphicon-th-large"></span>Dashboard</a>
             <a href="Reports.aspx"><span class="glyphicon glyphicon-stats"></span>Reports</a>
