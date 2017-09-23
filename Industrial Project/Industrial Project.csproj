@@ -110,6 +110,7 @@
     <Content Include="webfroms\DashboardChart.aspx" />
     <Content Include="webfroms\ManageAccount.aspx" />
     <Content Include="webfroms\ManagerOtherAccount.aspx" />
+    <Content Include="webfroms\TimeFrameReports.aspx" />
     <Content Include="webfroms\UserAlteration.aspx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -204,6 +205,13 @@
     </Compile>
     <Compile Include="webfroms\Reports.aspx.designer.cs">
       <DependentUpon>Reports.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webfroms\TimeFrameReports.aspx.cs">
+      <DependentUpon>TimeFrameReports.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webfroms\TimeFrameReports.aspx.designer.cs">
+      <DependentUpon>TimeFrameReports.aspx</DependentUpon>
     </Compile>
     <Compile Include="webfroms\Upload.aspx.cs">
       <DependentUpon>Upload.aspx</DependentUpon>
