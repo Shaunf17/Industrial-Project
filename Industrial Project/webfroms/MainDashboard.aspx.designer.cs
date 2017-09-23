@@ -13,12 +13,21 @@ namespace Industrial_Project.webfroms {
     public partial class MainDashboard {
         
         /// <summary>
-        /// LogOut control.
+        /// UploadButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LogOut;
+        protected global::System.Web.UI.WebControls.LinkButton UploadButton;
+        
+        /// <summary>
+        /// AccountButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton AccountButton;
     }
 }

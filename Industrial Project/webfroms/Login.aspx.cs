@@ -39,6 +39,7 @@ namespace Industrial_Project.webfroms
             {
                 rd.Read();
                 Session["username"] = userName.Text;
+                Session["role"] = rd[3].ToString();
                 conn.Close();
                 conn.Dispose();
                 Response.Redirect("MainDashboard.aspx");

@@ -33,9 +33,10 @@
             <a href="MainDashboard.aspx" class ="active"><span class="glyphicon glyphicon-th-large"></span>Dashboard</a>
             <a href="Reports.aspx"><span class="glyphicon glyphicon-stats"></span>Reports</a>
             <a href="RawData.aspx"><span class="glyphicon glyphicon-th-list"></span>Raw Data</a>
-            <a href="Upload.aspx"><span class="glyphicon glyphicon-upload"></span>Upload</a>
             <form runat="server">
-            <asp:LinkButton ID="LogOut" onclick="LogOut_click" runat="server"><span class="glyphicon glyphicon-log-out"></span>Logout</asp:LinkButton>
+                <asp:LinkButton ID="UploadButton" onclick="Upload_Click" runat="server"><span class="glyphicon glyphicon-upload"></span>Upload</asp:LinkButton>
+             <asp:LinkButton ID="AccountButton" onclick="Account_click" runat="server"><span class="glyphicon glyphicon-user"></span>Account</asp:LinkButton>
+            <asp:LinkButton  onclick="LogOut_click" runat="server"><span class="glyphicon glyphicon-log-out"></span>Logout</asp:LinkButton>
             </form>
         </div>
     </div>

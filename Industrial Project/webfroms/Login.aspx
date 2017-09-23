@@ -17,11 +17,11 @@
                     <h1>Welcome</h1>
                     <div class="labels" style="margin-top:3%">
                         <label>Username </label>
-                        <asp:TextBox ID="userName" runat="server" CssClass="textbox form-control input-sm chat-input "></asp:TextBox>
+                        <asp:TextBox ID="userName" runat="server" CssClass="textbox form-control input-sm chat-input " placeholder="Enter username"></asp:TextBox>
                     </div>
                     <div class="labels">
                         <label>Password</label>
-                        <asp:TextBox ID="userPassword" runat="server" CssClass="textbox form-control input-sm chat-input " TextMode="Password"></asp:TextBox>
+                        <asp:TextBox ID="userPassword" runat="server" CssClass="textbox form-control input-sm chat-input " TextMode="Password"  placeholder="Enter password"></asp:TextBox>
                         <span class="group-btn">
                             <asp:Label ID="Label1" runat="server" Visible="False" Text="Incorrect username or password."></asp:Label>
                         </span>

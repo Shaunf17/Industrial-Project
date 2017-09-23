@@ -107,6 +107,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Pictures\Yoyo_logo_NO_BG.png" />
+    <Content Include="webfroms\ManageAccount.aspx" />
+    <Content Include="webfroms\ManagerOtherAccount.aspx" />
+    <Content Include="webfroms\UserAlteration.aspx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -159,6 +162,20 @@
     <Compile Include="webfroms\MainDashboard.aspx.designer.cs">
       <DependentUpon>MainDashboard.aspx</DependentUpon>
     </Compile>
+    <Compile Include="webfroms\ManageAccount.aspx.cs">
+      <DependentUpon>ManageAccount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webfroms\ManageAccount.aspx.designer.cs">
+      <DependentUpon>ManageAccount.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webfroms\ManagerOtherAccount.aspx.cs">
+      <DependentUpon>ManagerOtherAccount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webfroms\ManagerOtherAccount.aspx.designer.cs">
+      <DependentUpon>ManagerOtherAccount.aspx</DependentUpon>
+    </Compile>
     <Compile Include="webfroms\OldChartDataRange.aspx.cs">
       <DependentUpon>OldChartDataRange.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -193,6 +210,13 @@
     </Compile>
     <Compile Include="webfroms\tester.aspx.designer.cs">
       <DependentUpon>tester.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webfroms\UserAlteration.aspx.cs">
+      <DependentUpon>UserAlteration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webfroms\UserAlteration.aspx.designer.cs">
+      <DependentUpon>UserAlteration.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <PropertyGroup>
