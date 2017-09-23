@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-     <link href="../css/StyleSheet1.css" rel="stylesheet" />
+    <link href="../css/StyleSheet1.css" rel="stylesheet" />
     <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet" />
     <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/3.1.3/css/bootstrap-datetimepicker.min.css' />
     <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css' />
@@ -48,29 +48,68 @@
                    
                 )
                 .then(function () {
+
+                    var colors = [];
+                    for (i =0; i < chartData.length;i++)
+                    {
+                        var color;
+                        if(chartData[i]>0 && chartData[i]<=20)
+                        {
+                            color = "rgb(51, 102, 255)";
+                        }
+                        else if (chartData[i] > 20 && chartData[i] <= 40) {
+                            color = "rgb(51, 204, 255)";
+                        }
+                        else if (chartData[i] > 40 && chartData[i] <= 60) {
+                            color = "rgb(255, 153, 102)";
+                        }
+                        else if (chartData[i] > 60 && chartData[i] <= 80) {
+                            color = "rgb(255, 128, 0)";
+                        }
+                        else if (chartData[i] > 80 && chartData[i] <= 100) {
+                            color = "rgb(51, 102, 255)";
+                        }
+                        else
+                        {
+                            color = "rgb(230, 0, 0)";
+                        }
+                        colors.push(color);
+                    }
+
                     console.log(chartData);
                     var ctx = document.getElementById("myChart").getContext("2d");
                     myChart = new Chart(ctx, {
                         type: 'bar',
                         data: {
                             datasets: [{
-                                label: ' Revenue',
+                                label:'Revenue',
                                 data: chartData,
-                                backgroundColor: "rgba(153,255,51,0.6)"
+                                backgroundColor: colors
                             }],
-                            options: {
-                                responsive: true,
-                                legend: {
-                                    position: 'top',
-                                },
-                                title: {
-                                    display: true,
-                                    text: 'Chart.js Bar Chart'
-                                }
-                            },
-                            labels: ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday']
-                        }
+                            labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+                        },
+                        options: {
+                            responsive: true,
+                            legend: {
+                                display: false,
 
+                            },
+                            title: {
+                                display: true,
+                                text: 'Revenue Overview',
+                                position: 'top',
+                                fontSize: 24,
+                                fontColor: 'rgb(0, 0, 0)'
+                            },
+                            scales: {
+                                xAxes: [{
+                                    ticks: {
+                                        fontSize: 24
+                                    }
+                                }]
+                            }
+
+                        }
                     });
 
                 });
