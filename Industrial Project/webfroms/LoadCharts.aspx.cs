@@ -178,7 +178,307 @@ namespace Industrial_Project.webfroms
             return columnData.ToArray();
         }
 
+        [WebMethod]
+        [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+        public static List<double> GetBarPieGraphData(string timeFrame)
+        {
+
+            SqlConnection con = new SqlConnection();
+            string connString = ConfigurationManager.ConnectionStrings["Connection"].ConnectionString;
+            con.ConnectionString = connString;
+            SqlCommand cmd;
+            myData.Clear();
+            if (timeFrame == "Last week")
+            {
+                cmd = new SqlCommand("Report_OneWeek", con);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                con.Open();
+
+                SqlDataReader rd = cmd.ExecuteReader();
+                while (rd.Read())
+                {
+                    myData.Add(double.Parse(rd[0].ToString()));
+
+                }
+                cmd.Dispose();
+                con.Close();
+                con.Dispose();
+
+                return myData;
+            }
+            else if (timeFrame == "Last month")
+            {
+                cmd = new SqlCommand("Report_OneMonth", con);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                con.Open();
+
+                SqlDataReader rd = cmd.ExecuteReader();
+                while (rd.Read())
+                {
+                    myData.Add(double.Parse(rd[0].ToString()));
+
+                }
+                cmd.Dispose();
+                con.Close();
+                con.Dispose();
+
+                return myData;
+            }
+            else if (timeFrame == "Last 3 months")
+            {
+                cmd = new SqlCommand("Report_ThreeMonths", con);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                con.Open();
+
+                SqlDataReader rd = cmd.ExecuteReader();
+                while (rd.Read())
+                {
+                    myData.Add(double.Parse(rd[0].ToString()));
+
+                }
+                cmd.Dispose();
+                con.Close();
+                con.Dispose();
+
+                return myData;
+            }
+            else if (timeFrame == "Last 6 months")
+            {
+                cmd = new SqlCommand("Report_SixMonths", con);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                con.Open();
+
+                SqlDataReader rd = cmd.ExecuteReader();
+                while (rd.Read())
+                {
+                    myData.Add(double.Parse(rd[0].ToString()));
+
+                }
+                cmd.Dispose();
+                con.Close();
+                con.Dispose();
+
+                return myData;
+            }
+            else if (timeFrame == "Last year")
+            {
+                cmd = new SqlCommand("Report_OneYear", con);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                con.Open();
+
+                SqlDataReader rd = cmd.ExecuteReader();
+                while (rd.Read())
+                {
+                    myData.Add(double.Parse(rd[0].ToString()));
+
+                }
+                cmd.Dispose();
+                con.Close();
+                con.Dispose();
+
+                return myData;
+            }
+
+
+            return myData;
+
+        }
+
+        [WebMethod]
+        [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+        public static List<string> GetBarPieColumnData(string timeFrame)
+        {
+
+            SqlConnection con = new SqlConnection();
+            string connString = ConfigurationManager.ConnectionStrings["Connection"].ConnectionString;
+            con.ConnectionString = connString;
+            SqlCommand cmd;
+            columnData.Clear();
+            if (timeFrame == "Last week")
+            {
+                cmd = new SqlCommand("Report_OneWeek", con);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                con.Open();
+
+                SqlDataReader rd = cmd.ExecuteReader();
+                while (rd.Read())
+                {
+                    columnData.Add(rd[1].ToString());
+
+                }
+                cmd.Dispose();
+                con.Close();
+                con.Dispose();
+
+                return columnData;
+            }
+            else if (timeFrame == "Last month")
+            {
+                cmd = new SqlCommand("Report_OneMonth", con);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                con.Open();
+
+                SqlDataReader rd = cmd.ExecuteReader();
+                while (rd.Read())
+                {
+                    columnData.Add(rd[1].ToString());
+
+                }
+                cmd.Dispose();
+                con.Close();
+                con.Dispose();
+
+                return columnData;
+            }
+            else if (timeFrame == "Last 3 months")
+            {
+                cmd = new SqlCommand("Report_ThreeMonths", con);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                con.Open();
+
+                SqlDataReader rd = cmd.ExecuteReader();
+                while (rd.Read())
+                {
+                    columnData.Add(rd[1].ToString());
+
+                }
+                cmd.Dispose();
+                con.Close();
+                con.Dispose();
+
+                return columnData;
+            }
+            else if (timeFrame == "Last 6 months")
+            {
+                cmd = new SqlCommand("Report_SixMonths", con);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                con.Open();
+
+                SqlDataReader rd = cmd.ExecuteReader();
+                while (rd.Read())
+                {
+                    columnData.Add(rd[1].ToString());
+
+                }
+                cmd.Dispose();
+                con.Close();
+                con.Dispose();
+
+                return columnData;
+            }
+            else if (timeFrame == "Last year")
+            {
+                cmd = new SqlCommand("Report_OneYear", con);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                con.Open();
+
+                SqlDataReader rd = cmd.ExecuteReader();
+                while (rd.Read())
+                {
+                    columnData.Add(rd[1].ToString());
+
+                }
+                cmd.Dispose();
+                con.Close();
+                con.Dispose();
+
+                return columnData;
+            }
+
+            return columnData;
+
+        }
+
+        [WebMethod]
+        public static List<string> GetBarPieDateRangeColumn(string startDat, string endDat)
+        {
+
+            //DateTime sDate = DateTime.ParseExact(startDat, "yyyy-MM-dd", null);
+            //DateTime endingDate = DateTime.ParseExact(endDat, "yyyy-MM-dd", null);
+            //int result = DateTime.Compare(sDate, endingDate);
+
+            columnData.Clear();
+
+            SqlConnection con = new SqlConnection();
+            string connString = ConfigurationManager.ConnectionStrings["Connection"].ConnectionString;
+            con.ConnectionString = connString;
+
+            SqlCommand cmd = new SqlCommand("TotalSalesPieChart", con);
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+            cmd.Parameters.Add(new SqlParameter("startDate", startDat));
+            cmd.Parameters.Add(new SqlParameter("endDate", endDat));
+
+            con.Open();
+            try
+            {
+                SqlDataReader rd = cmd.ExecuteReader();
+                while (rd.Read())
+                {
+                    columnData.Add(rd[1].ToString());
+                }
+
+                con.Close();
+                con.Dispose();
+
+                /*myData.Add(execProcedure(outR, sDate, sDate.AddMonths(1)));
+                    sDate = sDate.AddMonths(1);*/
+
+
+            }
+            catch (Exception)
+            {
+                columnData.Add("Exception");
+            }
+            return columnData;
+
+        }
+
+        [WebMethod]
+        public static List<double> GetBarPieDateRangeData(string startDat, string endDat)
+        {
+           
+            //DateTime sDate = DateTime.ParseExact(startDat, "yyyy-MM-dd", null);
+            //DateTime endingDate = DateTime.ParseExact(endDat, "yyyy-MM-dd", null);
+            //int result = DateTime.Compare(sDate, endingDate);
+
+            myData.Clear();
+
+            SqlConnection con = new SqlConnection();
+            string connString = ConfigurationManager.ConnectionStrings["Connection"].ConnectionString;
+            con.ConnectionString = connString;
+
+            SqlCommand cmd = new SqlCommand("TotalSalesPieChart", con);
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+            cmd.Parameters.Add(new SqlParameter("startDate", startDat));
+            cmd.Parameters.Add(new SqlParameter("endDate", endDat));
+
+            con.Open();
+            try
+            {
+                SqlDataReader rd = cmd.ExecuteReader();
+                while (rd.Read())
+                {
+                    myData.Add(double.Parse(rd[0].ToString()));
+                }
+
+                con.Close();
+                con.Dispose();
+
+                /*myData.Add(execProcedure(outR, sDate, sDate.AddMonths(1)));
+                    sDate = sDate.AddMonths(1);*/
+
+
+                Debug.WriteLine("The chart numbers array: " + printArr(myData));
+            }
+            catch (Exception)
+            {
+                myData.Add(-1);
+            }
+            return myData;
+
+        }
+
     }
-
-
 }
