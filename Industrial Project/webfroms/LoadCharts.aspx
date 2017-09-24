@@ -77,7 +77,7 @@
 
             //global variables
 
-            var locations = [];
+            
             var chartData;// = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
             var columnData = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
             var config = {
@@ -132,8 +132,9 @@
             $(document).ready(function () {
                 $(".locationChange").change(function () {
 
-                    for (var index = 0; index < config.data.labels.length; ++index) {
-                        config.data.datasets.splice(0, 1);
+                    var labelsLength = config.data.datasets.length;
+                    for (var index = 0; index < labelsLength; index++) {
+                        config.data.datasets.pop();
                     }
 
                     //alert("Location/Date Change");
@@ -156,7 +157,7 @@
                         }
                     }
                     if (values === "") values = "None selected";
-
+                    var locations = [];
                     locations = values.split('%');
 
                     //alert(locations[0]);
