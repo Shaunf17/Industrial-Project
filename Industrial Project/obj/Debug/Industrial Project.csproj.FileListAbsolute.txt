@@ -31,3 +31,37 @@ C:\Users\Admin\Desktop\Industrial-Project\Industrial Project\bin\Microsoft.CodeD
 C:\Users\Admin\Desktop\Industrial-Project\Industrial Project\obj\Debug\Industrial Project.csprojResolveAssemblyReference.cache
 C:\Users\Admin\Desktop\Industrial-Project\Industrial Project\obj\Debug\Industrial Project.dll
 C:\Users\Admin\Desktop\Industrial-Project\Industrial Project\obj\Debug\Industrial Project.pdb
+C:\Users\craigneely\Source\Repos\Industrial-Project\Industrial Project\bin\ApplicationInsights.config
+C:\Users\craigneely\Source\Repos\Industrial-Project\Industrial Project\bin\roslyn\csc.exe
+C:\Users\craigneely\Source\Repos\Industrial-Project\Industrial Project\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\craigneely\Source\Repos\Industrial-Project\Industrial Project\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\craigneely\Source\Repos\Industrial-Project\Industrial Project\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\craigneely\Source\Repos\Industrial-Project\Industrial Project\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\craigneely\Source\Repos\Industrial-Project\Industrial Project\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\craigneely\Source\Repos\Industrial-Project\Industrial Project\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\craigneely\Source\Repos\Industrial-Project\Industrial Project\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\craigneely\Source\Repos\Industrial-Project\Industrial Project\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\craigneely\Source\Repos\Industrial-Project\Industrial Project\bin\roslyn\vbc.exe
+C:\Users\craigneely\Source\Repos\Industrial-Project\Industrial Project\bin\roslyn\VBCSCompiler.exe
+C:\Users\craigneely\Source\Repos\Industrial-Project\Industrial Project\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\craigneely\Source\Repos\Industrial-Project\Industrial Project\bin\Industrial Project.dll.config
+C:\Users\craigneely\Source\Repos\Industrial-Project\Industrial Project\bin\Industrial Project.dll
+C:\Users\craigneely\Source\Repos\Industrial-Project\Industrial Project\bin\Industrial Project.pdb
+C:\Users\craigneely\Source\Repos\Industrial-Project\Industrial Project\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\craigneely\Source\Repos\Industrial-Project\Industrial Project\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\craigneely\Source\Repos\Industrial-Project\Industrial Project\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\craigneely\Source\Repos\Industrial-Project\Industrial Project\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\craigneely\Source\Repos\Industrial-Project\Industrial Project\bin\Microsoft.AI.Web.dll
+C:\Users\craigneely\Source\Repos\Industrial-Project\Industrial Project\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\craigneely\Source\Repos\Industrial-Project\Industrial Project\bin\Microsoft.ApplicationInsights.dll
+C:\Users\craigneely\Source\Repos\Industrial-Project\Industrial Project\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\craigneely\Source\Repos\Industrial-Project\Industrial Project\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\craigneely\Source\Repos\Industrial-Project\Industrial Project\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\craigneely\Source\Repos\Industrial-Project\Industrial Project\bin\Microsoft.AI.Web.xml
+C:\Users\craigneely\Source\Repos\Industrial-Project\Industrial Project\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\craigneely\Source\Repos\Industrial-Project\Industrial Project\bin\Microsoft.ApplicationInsights.xml
+C:\Users\craigneely\Source\Repos\Industrial-Project\Industrial Project\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\craigneely\Source\Repos\Industrial-Project\Industrial Project\obj\Debug\Industrial Project.csprojResolveAssemblyReference.cache
+C:\Users\craigneely\Source\Repos\Industrial-Project\Industrial Project\obj\Debug\Industrial Project.csproj.CoreCompileInputs.cache
+C:\Users\craigneely\Source\Repos\Industrial-Project\Industrial Project\obj\Debug\Industrial Project.dll
+C:\Users\craigneely\Source\Repos\Industrial-Project\Industrial Project\obj\Debug\Industrial Project.pdb

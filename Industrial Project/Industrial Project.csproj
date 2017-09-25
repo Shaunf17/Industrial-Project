@@ -96,6 +96,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="css\LoginCss.css" />
+    <Content Include="img\ajax-loader.gif" />
+    <Content Include="img\Preloader_8.gif" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -109,7 +111,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="css\StyleSheet1.css" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="webfroms\Login.aspx" />
     <Content Include="webfroms\RawData.aspx" />
     <Content Include="webfroms\tester.aspx" />
