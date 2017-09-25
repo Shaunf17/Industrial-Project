@@ -3,40 +3,60 @@
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
+
 <head runat="server">
-    <link href="../css/MainDashboardCSS.css" rel="stylesheet" />
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <title>Raw Data</title>
+    <link href="../css/RawData.css" rel="stylesheet" />
+
+    <title></title>
+    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
+    <script>
+        // Wait for window load
+        $(window).load(function () {
+            $(".loading").fadeOut("slow");;  
+            <ul>
+                <li class="Loading-message:">Please wait while the page is being loaded, this could take several minutes</li>
+            </ul>
+            // Animate loader off screen
+            $(".se-pre-con").fadeOut("slow");;
+            
+        });
+    </script>
 </head>
+   
 <body>
-    <div class="Header">
-        <img id="YoyoLogo" src="../Pictures/Yoyo_logo_white_NO_BG.png" />
+  
+    <div class="se-pre-con"></div>
 
-    </div>
+    <h1>Raw Data</h1>
+    <br />
+    <p>Overview of all of the data</p>
+    <br />
+    <br />
 
-    <div class="SubHeader">
-        <ul class ="GraphOptions">
-            <li>Time Frame</li>
-            <li>Location</li>
-            <li>Date Range</li>
-            <li>Chart Type</li>
-        </ul>
-    </div>
 
-    <div class ="SideBar">
-        <div id ="SideBarTop"></div>
-        <div class ="SideBarMenu">
-            <a href="MainDashboard.aspx"><span class="glyphicon glyphicon-th-large"></span>Dashboard</a>
-            <a href="Reports.aspx"><span class="glyphicon glyphicon-stats"></span>Reports</a>
-            <a href="RawData.aspx" class ="active"><span class="glyphicon glyphicon-th-list"></span>Raw Data</a>
-            <a href="Upload.aspx"><span class="glyphicon glyphicon-upload"></span>Upload</a>
-            <form runat="server">
-            <asp:LinkButton ID="LogOut" onclick="LogOut_click" runat="server"><span class="glyphicon glyphicon-log-out"></span>Logout</asp:LinkButton>
-            </form>
+    <asp:PlaceHolder ID="PlaceHolder2" runat="server"></asp:PlaceHolder>
+    <form id="form1" runat="server">
+
+        <div id="container">
+
+            <asp:PlaceHolder ID="PlaceHolder1" runat="server"></asp:PlaceHolder>
+            <table id="YoyoDisbursals" border="0">
+                <tr>
+                    <td>Date & Time</td>
+                    <td>Retailer Ref</td>
+                    <td>Outlet Ref</td>
+                    <td>Retailer Name</td>
+                    <td>Outlet Name</td>
+                    <td>New user id</td>
+                    <td>Transaction Type</td>
+                    <td>Cash Spent</td>
+                    <td>Discount Amount</td>
+                    <td>Total Amount</td>
+                </tr>
+            </table>
         </div>
-    </div>
+    </form>
 </body>
 </html>
