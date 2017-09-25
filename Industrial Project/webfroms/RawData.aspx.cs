@@ -10,13 +10,16 @@ using System.Configuration;
 using System.Data;
 
 namespace Industrial_Project.webfroms
-{
+{ 
+
     public partial class RawData : System.Web.UI.Page
     {
+
         //String ConnectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ToString();
         StringBuilder table = new StringBuilder();
 
         protected void Page_Load(object sender, EventArgs e)
+
         {
 
             if (!Page.IsPostBack)
