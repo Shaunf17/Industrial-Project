@@ -10,7 +10,7 @@
 namespace Industrial_Project.webfroms {
     
     
-    public partial class LoadCharts {
+    public partial class PopularityCharts {
         
         /// <summary>
         /// form1 control.

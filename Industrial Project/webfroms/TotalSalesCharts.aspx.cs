@@ -13,7 +13,7 @@ using System.Web.UI.WebControls;
 
 namespace Industrial_Project.webfroms
 {
-    public partial class LoadCharts : System.Web.UI.Page
+    public partial class TotalSalesCharts : System.Web.UI.Page
     {
         protected static List<double> myData = new List<double>();
         protected static List<string> columnData = new List<string>();

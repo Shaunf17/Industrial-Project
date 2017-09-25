@@ -109,6 +109,7 @@
     </Content>
     <Content Include="Pictures\Yoyo_logo_NO_BG.png" />
     <Content Include="webfroms\DashboardChart.aspx" />
+    <Content Include="webfroms\PopularityCharts.aspx" />
     <Content Include="webfroms\ManageAccount.aspx" />
     <Content Include="webfroms\ManagerOtherAccount.aspx" />
     <Content Include="webfroms\newLogin.aspx" />
@@ -133,7 +134,7 @@
     <Content Include="webfroms\RawData.aspx" />
     <Content Include="webfroms\Reports.aspx" />
     <Content Include="webfroms\Upload.aspx" />
-    <Content Include="webfroms\LoadCharts.aspx" />
+    <Content Include="webfroms\TotalSalesCharts.aspx" />
     <Content Include="webfroms\tester.aspx" />
   </ItemGroup>
   <ItemGroup>
@@ -152,12 +153,19 @@
     <Compile Include="webfroms\DifferentNavigation.aspx.designer.cs">
       <DependentUpon>DifferentNavigation.aspx</DependentUpon>
     </Compile>
-    <Compile Include="webfroms\LoadCharts.aspx.cs">
-      <DependentUpon>LoadCharts.aspx</DependentUpon>
+    <Compile Include="webfroms\PopularityCharts.aspx.cs">
+      <DependentUpon>PopularityCharts.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="webfroms\LoadCharts.aspx.designer.cs">
-      <DependentUpon>LoadCharts.aspx</DependentUpon>
+    <Compile Include="webfroms\PopularityCharts.aspx.designer.cs">
+      <DependentUpon>PopularityCharts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webfroms\TotalSalesCharts.aspx.cs">
+      <DependentUpon>TotalSalesCharts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webfroms\TotalSalesCharts.aspx.designer.cs">
+      <DependentUpon>TotalSalesCharts.aspx</DependentUpon>
     </Compile>
     <Compile Include="webfroms\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="LoadCharts.aspx.cs" Inherits="Industrial_Project.webfroms.LoadCharts" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="PopularityCharts.aspx.cs" Inherits="Industrial_Project.webfroms.PopularityCharts" %>
 
 
 <!DOCTYPE html>
@@ -31,8 +31,6 @@
         <asp:PlaceHolder ID="PlaceHolder1" runat="server"></asp:PlaceHolder>
         <div class="container">
             <div class="row">
-
-
                 <div class="col-md-2 col-md-offset-2">
                     <div class="form-group">
                         <label for="chartType">Chart Type</label><br />
@@ -45,7 +43,7 @@
                 </div>
                 <div class="col-md-2">
                     <div class="form-group">
-                        <label for="startDate">startDate</label>
+                        <label for="startDate">Start Date</label>
                         <div class='input-group date locationChange' id='datetimepicker1'>
                             <!--<input type='text' class="form-control" />-->
                             <asp:TextBox ID="startingDate" type='text' runat="server" CssClass="form-control" Text="2015-09-15"></asp:TextBox>
@@ -56,7 +54,7 @@
                 </div>
                 <div class="col-md-2">
                     <div class="form-group">
-                        <label for="endDate">endDate</label>
+                        <label for="endDate">End Date</label>
                         <div class='input-group date locationChange' id='datetimepicker2'>
                             <!--<input type='text' class="form-control" />-->
                             <asp:TextBox ID="endingDate" type='text' runat="server" CssClass="form-control" Text="2015-09-29"></asp:TextBox>
@@ -115,7 +113,7 @@
                     responsive: true,
                     title: {
                         display: true,
-                        text: 'Total Sales',
+                        text: 'Popularity',
                         position: 'top',
                         fontSize: 24,
                         fontColor: 'rgb(0, 0, 0)'
@@ -140,7 +138,7 @@
                             display: true,
                             scaleLabel: {
                                 display: true,
-                                labelString: 'Value'
+                                labelString: 'Transactions'
                             }
                         }]
                     }
@@ -160,7 +158,7 @@
                     },
                     title: {
                         display: true,
-                        text: 'Total Sales',
+                        text: 'Popularity',
                         position: 'top',
                         fontSize: 24,
                         fontColor: 'rgb(0, 0, 0)'
@@ -186,7 +184,7 @@
                     responsive: true,
                     title: {
                         display: true,
-                        text: 'Total Sales',
+                        text: 'Popularity',
                         position: 'top',
                         fontSize: 24,
                         fontColor: 'rgb(0, 0, 0)'
@@ -335,7 +333,7 @@
                             $.when(
                                 jQuery.ajax({
                                     //async: false,
-                                    url: "LoadCharts.aspx/GetBarPieColumnData",
+                                    url: "PopularityCharts.aspx/GetBarPieColumnData",
                                     data: JSON.stringify(obj),
                                     dataType: "json",
                                     type: "POST",
@@ -348,7 +346,7 @@
                                 }),
                             jQuery.ajax({
                                 //async: false,
-                                url: "LoadCharts.aspx/GetBarPieGraphData",
+                                url: "PopularityCharts.aspx/GetBarPieGraphData",
                                 data: JSON.stringify(obj),
                                 dataType: "json",
                                 type: "POST",
@@ -418,7 +416,7 @@
                             $.when(
                                 jQuery.ajax({
                                     //async: false,
-                                    url: "LoadCharts.aspx/GetBarPieColumnData",
+                                    url: "PopularityCharts.aspx/GetBarPieColumnData",
                                     data: JSON.stringify(obj),
                                     dataType: "json",
                                     type: "POST",
@@ -431,7 +429,7 @@
                                 }),
                             jQuery.ajax({
                                 //async: false,
-                                url: "LoadCharts.aspx/GetBarPieGraphData",
+                                url: "PopularityCharts.aspx/GetBarPieGraphData",
                                 data: JSON.stringify(obj),
                                 dataType: "json",
                                 type: "POST",
@@ -523,7 +521,7 @@
                                 (function (i) {
                                     jQuery.ajax({
                                         async: false,
-                                        url: "LoadCharts.aspx/GetColumnData",
+                                        url: "PopularityCharts.aspx/GetColumnData",
                                         data: JSON.stringify(col),
                                         dataType: "json",
                                         type: "POST",
@@ -546,7 +544,7 @@
                                     obj.endDat = $.trim($("[id*=endingDate]").val());
                                     jQuery.ajax({
                                         async: false,
-                                        url: "LoadCharts.aspx/initializeChart",
+                                        url: "PopularityCharts.aspx/initializeChart",
                                         data: JSON.stringify(obj),
                                         dataType: "json",
                                         type: "POST",
@@ -600,7 +598,7 @@
                         $.when(
                         jQuery.ajax({
                             //async: false,
-                            url: "LoadCharts.aspx/GetBarPieDateRangeColumn",
+                            url: "PopularityCharts.aspx/GetBarPieDateRangeColumn",
                             data: JSON.stringify(obj),
                             dataType: "json",
                             type: "POST",
@@ -613,7 +611,7 @@
                         }),
                         jQuery.ajax({
                             //async: false,
-                            url: "LoadCharts.aspx/GetBarPieDateRangeData",
+                            url: "PopularityCharts.aspx/GetBarPieDateRangeData",
                             data: JSON.stringify(obj),
                             dataType: "json",
                             type: "POST",
