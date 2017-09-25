@@ -114,6 +114,7 @@
     <Content Include="webfroms\ManagerOtherAccount.aspx" />
     <Content Include="webfroms\newLogin.aspx" />
     <Content Include="webfroms\TimeFrameReports.aspx" />
+    <Content Include="webfroms\ActivityCharts.aspx" />
     <Content Include="webfroms\UserAlteration.aspx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -159,6 +160,13 @@
     </Compile>
     <Compile Include="webfroms\PopularityCharts.aspx.designer.cs">
       <DependentUpon>PopularityCharts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webfroms\ActivityCharts.aspx.cs">
+      <DependentUpon>ActivityCharts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webfroms\ActivityCharts.aspx.designer.cs">
+      <DependentUpon>ActivityCharts.aspx</DependentUpon>
     </Compile>
     <Compile Include="webfroms\TotalSalesCharts.aspx.cs">
       <DependentUpon>TotalSalesCharts.aspx</DependentUpon>
