@@ -97,6 +97,7 @@
   <ItemGroup>
     <Content Include="css\LoginCss.css" />
     <Content Include="css\MainDashboardCSS.css" />
+    <Content Include="css\StyleSheet2.css" />
     <Content Include="css\UploadCSS.css" />
     <Content Include="js\analytics.js" />
     <Content Include="js\Chart.bundle.js" />
@@ -110,6 +111,7 @@
     <Content Include="webfroms\DashboardChart.aspx" />
     <Content Include="webfroms\ManageAccount.aspx" />
     <Content Include="webfroms\ManagerOtherAccount.aspx" />
+    <Content Include="webfroms\newLogin.aspx" />
     <Content Include="webfroms\TimeFrameReports.aspx" />
     <Content Include="webfroms\UserAlteration.aspx" />
     <None Include="Web.Debug.config">
@@ -184,6 +186,13 @@
     </Compile>
     <Compile Include="webfroms\ManagerOtherAccount.aspx.designer.cs">
       <DependentUpon>ManagerOtherAccount.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webfroms\newLogin.aspx.cs">
+      <DependentUpon>newLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webfroms\newLogin.aspx.designer.cs">
+      <DependentUpon>newLogin.aspx</DependentUpon>
     </Compile>
     <Compile Include="webfroms\OldChartDataRange.aspx.cs">
       <DependentUpon>OldChartDataRange.aspx</DependentUpon>

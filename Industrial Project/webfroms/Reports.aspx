@@ -17,15 +17,6 @@
 
     </div>
 
-    <div class="SubHeader">
-        <ul class ="GraphOptions">
-            <li>Time Frame</li>
-            <li>Location</li>
-            <li>Date Range</li>
-            <li>Chart Type</li>
-        </ul>
-    </div>
-
     <div class ="SideBar">
         <div id ="SideBarTop"></div>
         <div class ="SideBarMenu">
