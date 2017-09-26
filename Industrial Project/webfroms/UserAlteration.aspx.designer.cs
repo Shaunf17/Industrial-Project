@@ -13,6 +13,15 @@ namespace Industrial_Project.webfroms {
     public partial class UserAlteration {
         
         /// <summary>
+        /// form1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        
+        /// <summary>
         /// UploadButton control.
         /// </summary>
         /// <remarks>
@@ -22,13 +31,22 @@ namespace Industrial_Project.webfroms {
         protected global::System.Web.UI.WebControls.LinkButton UploadButton;
         
         /// <summary>
-        /// LinkButton1 control.
+        /// AccountButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButton1;
+        protected global::System.Web.UI.WebControls.LinkButton AccountButton;
+        
+        /// <summary>
+        /// LogOut control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton LogOut;
         
         /// <summary>
         /// userName control.
@@ -76,12 +94,12 @@ namespace Industrial_Project.webfroms {
         protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// PlaceHolder2 control.
+        /// Table1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder PlaceHolder2;
+        protected global::System.Web.UI.WebControls.Table Table1;
     }
 }

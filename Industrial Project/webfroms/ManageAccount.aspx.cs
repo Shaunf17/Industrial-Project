@@ -11,6 +11,7 @@ using System.Web.UI.WebControls;
 
 namespace Industrial_Project.webfroms
 {
+
     public partial class ManageAccount : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
@@ -24,7 +25,7 @@ namespace Industrial_Project.webfroms
                 UploadButton.Attributes.Add("style", "display:none");
             }
             userName.Attributes.Add("placeholder", "Enter new username");
-            userPassword.Attributes["placeholder"]="Enter new password";
+            userPassword.Attributes["placeholder"] = "Enter new password";
         }
 
         /// <summary>
@@ -54,10 +55,10 @@ namespace Industrial_Project.webfroms
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        protected void Account_click(object sender, EventArgs e)
+        protected void AccClick(object sender, EventArgs e)
         {
-            if(Session["role"].ToString() == "User") Response.Redirect("ManageAccount.aspx");
-            if(Session["role"].ToString() == "Admin") Response.Redirect("UserAlteration.aspx");
+            if (Session["role"].ToString() == "User") Response.Redirect("ManageAccount.aspx");
+            if (Session["role"].ToString() == "Admin") Response.Redirect("UserAlteration.aspx");
         }
 
         /// <summary>
@@ -144,7 +145,7 @@ namespace Industrial_Project.webfroms
                 }
                 else
                 {
-                    
+
                     Label1.Visible = true;
                     Label1.Text = "The username already exists";
                 }
@@ -176,3 +177,4 @@ namespace Industrial_Project.webfroms
         }
     }
 }
+

@@ -95,10 +95,12 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="css\Navbar.css" />
     <Content Include="css\LoginCss.css" />
     <Content Include="css\MainDashboardCSS.css" />
     <Content Include="css\StyleSheet2.css" />
     <Content Include="css\UploadCSS.css" />
+    <Content Include="css\UserAllocation.css" />
     <Content Include="js\analytics.js" />
     <Content Include="js\Chart.bundle.js" />
     <Content Include="js\LoadCharts.js" />
@@ -109,15 +111,15 @@
     </Content>
     <Content Include="Pictures\Yoyo_logo_NO_BG.png" />
     <Content Include="webfroms\Comparison.aspx" />
-    <Content Include="webfroms\DashboardChart.aspx" />
+    <Content Include="webfroms\ManageOtherAccounts.aspx" />
+    <Content Include="webfroms\UserAlteration.aspx" />
+    <Content Include="webfroms\ManageAccount.aspx" />
+    <Content Include="webfroms\Upload.aspx" />
+    <Content Include="webfroms\MainDashboard.aspx" />
     <Content Include="webfroms\PaymentsChart.aspx" />
     <Content Include="webfroms\PopularityCharts.aspx" />
-    <Content Include="webfroms\ManageAccount.aspx" />
-    <Content Include="webfroms\ManagerOtherAccount.aspx" />
-    <Content Include="webfroms\newLogin.aspx" />
-    <Content Include="webfroms\TimeFrameReports.aspx" />
+    <Content Include="webfroms\Login.aspx" />
     <Content Include="webfroms\ActivityCharts.aspx" />
-    <Content Include="webfroms\UserAlteration.aspx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -126,19 +128,12 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="css\StyleSheet1.css" />
     <Content Include="Pictures\Union_logo_NO_BG.png" />
     <Content Include="Pictures\Yoyo_logo_white_NO_BG.png" />
     <Content Include="Web.config" />
     <Content Include="webfroms\DifferentNavigation.aspx" />
-    <Content Include="webfroms\Login.aspx" />
-    <Content Include="webfroms\MainDashboard.aspx" />
-    <Content Include="webfroms\OldChartDataRange.aspx" />
     <Content Include="webfroms\RawData.aspx" />
-    <Content Include="webfroms\Reports.aspx" />
-    <Content Include="webfroms\Upload.aspx" />
     <Content Include="webfroms\TotalSalesCharts.aspx" />
-    <Content Include="webfroms\tester.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -149,19 +144,47 @@
     <Compile Include="webfroms\Comparison.aspx.designer.cs">
       <DependentUpon>Comparison.aspx</DependentUpon>
     </Compile>
-    <Compile Include="webfroms\DashboardChart.aspx.cs">
-      <DependentUpon>DashboardChart.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="webfroms\DashboardChart.aspx.designer.cs">
-      <DependentUpon>DashboardChart.aspx</DependentUpon>
-    </Compile>
     <Compile Include="webfroms\DifferentNavigation.aspx.cs">
       <DependentUpon>DifferentNavigation.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="webfroms\DifferentNavigation.aspx.designer.cs">
       <DependentUpon>DifferentNavigation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webfroms\ManageOtherAccounts.aspx.cs">
+      <DependentUpon>ManageOtherAccounts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webfroms\ManageOtherAccounts.aspx.designer.cs">
+      <DependentUpon>ManageOtherAccounts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webfroms\UserAlteration.aspx.cs">
+      <DependentUpon>UserAlteration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webfroms\UserAlteration.aspx.designer.cs">
+      <DependentUpon>UserAlteration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webfroms\ManageAccount.aspx.cs">
+      <DependentUpon>ManageAccount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webfroms\ManageAccount.aspx.designer.cs">
+      <DependentUpon>ManageAccount.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webfroms\Upload.aspx.cs">
+      <DependentUpon>Upload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webfroms\Upload.aspx.designer.cs">
+      <DependentUpon>Upload.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webfroms\MainDashboard.aspx.cs">
+      <DependentUpon>MainDashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webfroms\MainDashboard.aspx.designer.cs">
+      <DependentUpon>MainDashboard.aspx</DependentUpon>
     </Compile>
     <Compile Include="webfroms\PaymentsChart.aspx.cs">
       <DependentUpon>PaymentsChart.aspx</DependentUpon>
@@ -198,82 +221,12 @@
     <Compile Include="webfroms\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="webfroms\MainDashboard.aspx.cs">
-      <DependentUpon>MainDashboard.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="webfroms\MainDashboard.aspx.designer.cs">
-      <DependentUpon>MainDashboard.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="webfroms\ManageAccount.aspx.cs">
-      <DependentUpon>ManageAccount.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="webfroms\ManageAccount.aspx.designer.cs">
-      <DependentUpon>ManageAccount.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="webfroms\ManagerOtherAccount.aspx.cs">
-      <DependentUpon>ManagerOtherAccount.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="webfroms\ManagerOtherAccount.aspx.designer.cs">
-      <DependentUpon>ManagerOtherAccount.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="webfroms\newLogin.aspx.cs">
-      <DependentUpon>newLogin.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="webfroms\newLogin.aspx.designer.cs">
-      <DependentUpon>newLogin.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="webfroms\OldChartDataRange.aspx.cs">
-      <DependentUpon>OldChartDataRange.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="webfroms\OldChartDataRange.aspx.designer.cs">
-      <DependentUpon>OldChartDataRange.aspx</DependentUpon>
-    </Compile>
     <Compile Include="webfroms\RawData.aspx.cs">
       <DependentUpon>RawData.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="webfroms\RawData.aspx.designer.cs">
       <DependentUpon>RawData.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="webfroms\Reports.aspx.cs">
-      <DependentUpon>Reports.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="webfroms\Reports.aspx.designer.cs">
-      <DependentUpon>Reports.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="webfroms\TimeFrameReports.aspx.cs">
-      <DependentUpon>TimeFrameReports.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="webfroms\TimeFrameReports.aspx.designer.cs">
-      <DependentUpon>TimeFrameReports.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="webfroms\Upload.aspx.cs">
-      <DependentUpon>Upload.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="webfroms\Upload.aspx.designer.cs">
-      <DependentUpon>Upload.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="webfroms\tester.aspx.cs">
-      <DependentUpon>tester.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="webfroms\tester.aspx.designer.cs">
-      <DependentUpon>tester.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="webfroms\UserAlteration.aspx.cs">
-      <DependentUpon>UserAlteration.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="webfroms\UserAlteration.aspx.designer.cs">
-      <DependentUpon>UserAlteration.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <PropertyGroup>

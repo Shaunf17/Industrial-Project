@@ -11,6 +11,7 @@ using System.Web.UI.WebControls;
 
 namespace Industrial_Project.webfroms
 {
+
     public partial class UserAlteration : System.Web.UI.Page
     {
 
@@ -35,16 +36,9 @@ namespace Industrial_Project.webfroms
             conn.Open();
 
             SqlDataReader rd = com.ExecuteReader();
-            //Create a Table
-            Table tbl = new Table();
-            tbl.Style["Border-width"] = "5px";
-            tbl.Style["Border-style"] = "solid";
-            tbl.GridLines = GridLines.Both;
-            tbl.CellPadding = 5;
 
             //Header of Table
-            TableRow infoRow = new TableRow();
-
+            TableHeaderRow infoRow = new TableHeaderRow();
             //Cell of header
             TableCell tch0 = new TableCell();
             tch0.Text = "<b>Username</b>";
@@ -61,7 +55,7 @@ namespace Industrial_Project.webfroms
             infoRow.Cells.Add(tch2);
             infoRow.Cells.Add(tch3);
 
-            tbl.Rows.Add(infoRow);
+            Table1.Rows.Add(infoRow);
 
             int count = 0;
 
@@ -81,29 +75,33 @@ namespace Industrial_Project.webfroms
                     row.Cells.Add(cell1);
                     TableCell cell2 = new TableCell();
                     Button editbtn = new Button();
+                    editbtn.Attributes.Add("class", "btn btn-info btn-lg");
+                    editbtn.Attributes.Add("style", "font-size:17px");
                     editbtn.Click += new System.EventHandler(edit_Click);
                     editbtn.Text = "Update";
                     editbtn.ID = "Edit" + count;
                     cell2.Controls.Add(editbtn);
                     row.Cells.Add(cell2);
-                    
+
                     TableCell cell3 = new TableCell();
-                    if (rd[0].ToString()!=Session["username"].ToString())
+                    if (rd[0].ToString() != Session["username"].ToString())
                     {
                         Button deleteBtn = new Button();
                         deleteBtn.Click += new System.EventHandler(delete_Click);
                         deleteBtn.Text = "Delete";
                         deleteBtn.ID = "Delete" + count;
+                        deleteBtn.Attributes.Add("class", "btn btn-info btn-lg");
+                        deleteBtn.Attributes.Add("style", "font-size:17px");
                         cell3.Controls.Add(deleteBtn);
                     }
                     row.Cells.Add(cell3);
-
-                    tbl.Rows.Add(row);
+                   
+                    Table1.Rows.Add(row);
                     count++;
                 }
 
             }
-            PlaceHolder2.Controls.Add(tbl);
+            
             rd.Close();
             conn.Close();
 
@@ -163,7 +161,7 @@ namespace Industrial_Project.webfroms
             else
             {
                 Session["changingUsername"] = username;
-                Response.Redirect("ManagerOtherAccount.aspx");
+                Response.Redirect("ManageOtherAccounts.aspx");
             }
 
         }
@@ -291,6 +289,5 @@ namespace Industrial_Project.webfroms
             }
         }
     }
-
-
 }
+

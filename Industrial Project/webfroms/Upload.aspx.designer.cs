@@ -13,13 +13,31 @@ namespace Industrial_Project.webfroms {
     public partial class Upload {
         
         /// <summary>
-        /// Form1 control.
+        /// form1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm Form1;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        
+        /// <summary>
+        /// UploadButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton UploadButton;
+        
+        /// <summary>
+        /// AccountButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton AccountButton;
         
         /// <summary>
         /// LogOut control.
@@ -40,13 +58,13 @@ namespace Industrial_Project.webfroms {
         protected global::System.Web.UI.WebControls.Panel Panel1;
         
         /// <summary>
-        /// FileUpload control.
+        /// FileUp control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload FileUpload;
+        protected global::System.Web.UI.WebControls.FileUpload FileUp;
         
         /// <summary>
         /// btnUpload control.
@@ -58,13 +76,13 @@ namespace Industrial_Project.webfroms {
         protected global::System.Web.UI.WebControls.Button btnUpload;
         
         /// <summary>
-        /// lblMessage control.
+        /// labelMessage control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMessage;
+        protected global::System.Web.UI.WebControls.Label labelMessage;
         
         /// <summary>
         /// PlaceHolder1 control.

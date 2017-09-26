@@ -52,11 +52,6 @@ namespace Industrial_Project.webfroms
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            //displayRevenue();
-            //displayPopularLocation();
-            //displayRedemptions();
-            //displayLeastPopular();
-
             // Checks if the user is logged in.
             if (Session["username"] == null)
             {
@@ -64,7 +59,7 @@ namespace Industrial_Project.webfroms
             }
             if (Session["role"].ToString() != "Admin")
             {
-                UploadButton.Attributes.Add("style", "display:none");
+                UpButton.Attributes.Add("style", "display:none");
             }
         }
 
@@ -76,7 +71,7 @@ namespace Industrial_Project.webfroms
         protected void LogOut_click(object sender, EventArgs e)
         {
             Session["username"] = null;
-            Response.Redirect("newLogin.aspx");
+            Response.Redirect("Login.aspx");
         }
 
         /// <summary>
@@ -84,7 +79,7 @@ namespace Industrial_Project.webfroms
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        protected void Account_click(object sender, EventArgs e)
+        protected void Account_Click(object sender, EventArgs e)
         {
             if (Session["role"].ToString() == "User") Response.Redirect("ManageAccount.aspx");
             if (Session["role"].ToString() == "Admin") Response.Redirect("UserAlteration.aspx");
@@ -99,6 +94,37 @@ namespace Industrial_Project.webfroms
         {
 
             Response.Redirect("Upload.aspx");
+        }
+
+        [WebMethod]
+        [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+        public static List<double> getBarData()
+        {
+
+            SqlConnection con = new SqlConnection();
+            string connString = ConfigurationManager.ConnectionStrings["Connection"].ConnectionString;
+            con.ConnectionString = connString;
+
+            SqlCommand cmd = new SqlCommand("Dashboard_OverviewGraph", con);
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+            con.Open();
+            DateTime date1 = new DateTime(2016, 08, 17);
+            cmd.Parameters.Add(new SqlParameter("date", date1.Date.ToString("yyyy-MM-dd")));
+            List<double> revenue = new List<double>();
+
+            revenue.Clear();
+            SqlDataReader rd = cmd.ExecuteReader();
+            while (rd.Read())
+            {
+                revenue.Add(double.Parse(rd[0].ToString()));
+
+            }
+            cmd.Dispose();
+            con.Close();
+            con.Dispose();
+
+            return revenue;
         }
 
         // !! To be used at later stage !! 

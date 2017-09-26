@@ -23,11 +23,11 @@ namespace Industrial_Project.webfroms
             string connString = ConfigurationManager.ConnectionStrings["Connection"].ConnectionString;
             //SqlCommand Cmd = new SqlCommand();
             conn.ConnectionString = connString;
-            
-            SqlCommand com = new SqlCommand("CheckUser",conn);
+
+            SqlCommand com = new SqlCommand("CheckUser", conn);
             com.CommandType = System.Data.CommandType.StoredProcedure;
-            
-            SqlParameter username= new SqlParameter("username", userName.Text);
+
+            SqlParameter username = new SqlParameter("username", userName.Text);
             SqlParameter password = new SqlParameter("password", Hash(userPassword.Text));
             //Label1.Text = (Hash(userPassword.Text));
             com.Parameters.Add(username);

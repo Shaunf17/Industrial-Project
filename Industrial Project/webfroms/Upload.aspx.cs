@@ -38,19 +38,41 @@ namespace Industrial_Project.webfroms
         }
 
         /// <summary>
+        ///  Redirects to the appropriate page.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void Account_Click(object sender, EventArgs e)
+        {
+            if (Session["role"].ToString() == "User") Response.Redirect("ManageAccount.aspx");
+            if (Session["role"].ToString() == "Admin") Response.Redirect("UserAlteration.aspx");
+        }
+
+        /// <summary>
+        /// Redirects you to the upload page.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void Upload_Click(object sender, EventArgs e)
+        {
+
+            Response.Redirect("Upload.aspx");
+        }
+
+        /// <summary>
         ///  Action taken when the upload button is pressed.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         protected void btnUpload_Click(object sender, EventArgs e)
         {
-            lblMessage.ForeColor = System.Drawing.Color.Black;
+            labelMessage.ForeColor = System.Drawing.Color.Black;
 
             // Check if any file was uploaded
-            if (FileUpload.HasFile)
+            if (FileUp.HasFile)
             {
-                string FileName = Path.GetFileName(FileUpload.PostedFile.FileName);
-                string Extension = Path.GetExtension(FileUpload.PostedFile.FileName);
+                string FileName = Path.GetFileName(FileUp.PostedFile.FileName);
+                string Extension = Path.GetExtension(FileUp.PostedFile.FileName);
 
                 // Check if the file is the required format.
                 if (Extension.Contains("xls"))
@@ -60,34 +82,34 @@ namespace Industrial_Project.webfroms
                     {
                         // Insert the file name
                         if (insertFileName(FileName))
-                        { 
+                        {
                             string FolderPath = ConfigurationManager.AppSettings["FolderPath"];
                             string FilePath = Server.MapPath(FolderPath + FileName);
-                            FileUpload.SaveAs(FilePath);  // Save the excel file onto the server
+                            FileUp.SaveAs(FilePath);  // Save the excel file onto the server
                             UploadFile(FileName);
                         }
                         else
                         {
-                            lblMessage.ForeColor = System.Drawing.Color.Red;
-                            lblMessage.Text = "The report could not be uploaded.";
+                            labelMessage.ForeColor = System.Drawing.Color.Red;
+                            labelMessage.Text = "The report could not be uploaded.";
                         }
                     }
                     else
                     {
-                        lblMessage.ForeColor = System.Drawing.Color.Red;
-                        lblMessage.Text = "The report has already been uploaded.";
+                        labelMessage.ForeColor = System.Drawing.Color.Red;
+                        labelMessage.Text = "The report has already been uploaded.";
                     }
                 }
                 else
                 {
-                    lblMessage.ForeColor = System.Drawing.Color.Red;
-                    lblMessage.Text = "Wrong format of the file. The expected file should be a Microsoft Excel.";
+                    labelMessage.ForeColor = System.Drawing.Color.Red;
+                    labelMessage.Text = "Wrong format of the file. The expected file should be a Microsoft Excel.";
                 }
             }
             else
             {
-                lblMessage.ForeColor = System.Drawing.Color.Red;
-                lblMessage.Text = "No file was chosen.";
+                labelMessage.ForeColor = System.Drawing.Color.Red;
+                labelMessage.Text = "No file was chosen.";
             }
         }
 
@@ -211,12 +233,12 @@ namespace Industrial_Project.webfroms
 
                 dr.Close();
                 oledbconn.Close();
-                lblMessage.Text = "File imported into sql server.";
+                labelMessage.Text = "File imported into sql server.";
             }
             catch (Exception ex)
             {
-                lblMessage.ForeColor = System.Drawing.Color.Red;
-                lblMessage.Text = ex.Message;
+                labelMessage.ForeColor = System.Drawing.Color.Red;
+                labelMessage.Text = ex.Message;
                 deleteFileName(FileName);
             }
             finally
@@ -228,7 +250,7 @@ namespace Industrial_Project.webfroms
                         System.IO.File.Delete(excelFilePath);
                     }
                 }
-            }      
+            }
         }
     }
-}
+}    
