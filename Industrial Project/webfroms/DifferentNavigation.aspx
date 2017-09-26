@@ -1,5 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="DifferentNavigation.aspx.cs" Inherits="Industrial_Project.webfroms.DifferentNavigation" %>
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,35 +16,42 @@
 </head>
 
 <body>
+    <form runat="server">
+    <div class="back">
     <nav class="nav flex-column">
         <div class="nav-item">
-            <img id="YoyoLogo" src="../Pictures/Yoyo_white_Logo.png" />
-
+            <img id="YoyoLogo" src="../Pictures/logo.png" />
         </div>
-        <a class="nav-link" id="active" href="#"><i class="fa fa-th-large" aria-hidden="true"></i><div class="linkText d-inline">Home</div>
+        <a class="nav-link" id="active" href="MainDashboard.aspx"><i class="fa fa-th-large" aria-hidden="true"></i>
+            <div class="linkText d-inline">Home</div>
         </a>
-        <a class="nav-link" href="#"><i class="fa fa-bar-chart" aria-hidden="true"></i><div class="linkText d-inline">Reports</div></</a>
-        <a class="nav-link" href="#"><i class="fa fa-th-list" aria-hidden="true"></i><div class="linkText d-inline">Raw Data</div></a>
-        <a class="nav-link" href="#"><i class="fa fa-upload" aria-hidden="true"></i><div class="linkText d-inline">Upload</div></a>
-        <a class="nav-link" href="#"><i class="fa fa-sign-out" aria-hidden="true"></i><div class="linkText d-inline">Log out</div></a>
+        <div class="dropdown">
+            <a class="nav-link" href="Reports.aspx"><i class="fa fa-bar-chart" aria-hidden="true"></i>
+                <div class="linkText d-inline">Reports</div><i class="fa fa-chevron-down linkText" aria-hidden="true" style="float:right; margin-top:6px;"></i>
+              
+                </a>
+            <div class="dropdown-content">
+                <a href="#">Total Sales</a>
+                <a href="#">Popularity</a>
+                <a href="#">Activity</a>
+                <a href="#">Heat Map</a>
+                <a href="#">Comparison</a>
+            </div>
+        </div>
+        <a class="nav-link" href="RawData.aspx"><i class="fa fa-th-list" aria-hidden="true"></i>
+            <div class="linkText d-inline">Raw Data</div>
+        </a>
+        <a class="nav-link" href="Upload.aspx"><i class="fa fa-upload" aria-hidden="true"></i>
+            <div class="linkText d-inline">Upload</div>
+        </a>
+     <%--   <a class="nav-link" href="#"><i class="fa fa-sign-out" aria-hidden="true"></i>
+            <div class="linkText d-inline">Log out</div>--%>
+            <asp:LinkButton ID="LogOut" OnClick="LogOut_click" runat="server" CssClass="nav-link">
+               <i class="fa fa-sign-out" aria-hidden="true"></i><div class="linkText d-inline">Log out</div></asp:LinkButton>
+       <%-- </a>--%>
     </nav>
-    <div class="container-fluid">
-        <div class="row justify-content-center align-items-center">
-            <div class="col-4 text-center">
-                hessedse
-            </div>
-            <div class="col-4">
-                segsddrsr
-            </div>
-            <div class="col-4">
-                s
-                ergsdg
-            </div>
-        </div>
-        <div class="row">
-        </div>
     </div>
-
+        </form>
 
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>

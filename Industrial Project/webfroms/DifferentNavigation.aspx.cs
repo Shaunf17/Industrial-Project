@@ -13,5 +13,16 @@ namespace Industrial_Project.webfroms
         {
 
         }
+
+        //    /// <summary>
+        //    /// Logs out the user and deletes the session.
+        //    /// </summary>
+        //    /// <param name="sender"></param>
+        //    /// <param name="e"></param>
+        protected void LogOut_click(object sender, EventArgs e)
+        {
+            Session["username"] = null;
+            Response.Redirect("newLogin.aspx");
+        }
     }
 }

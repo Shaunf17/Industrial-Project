@@ -1,12 +1,13 @@
 ﻿
 .nav {
     position:absolute;
-
-    background-color: black;
+    background-color: #151515;
     color: white;
     height: 100%;
     padding-top: 2rem;
     width: 3rem;
+    font-family:Calibri;
+   
 }
 
 .linkText {
@@ -32,10 +33,11 @@
     background-color: #808080;
 }
 
-#active {
+
+
+.navbar li:hover ul #active {
     color: white;
     background-color: #808080;
-    text-decoration: underline;
 }
 
 .fa {
@@ -56,7 +58,7 @@
 
 @media (min-width: 992px) {
     .nav {
-        width: 9rem;
+        width: 11rem;
     }
 
     .linkText {
@@ -65,9 +67,9 @@
 
    #YoyoLogo {
 
-    width: 4rem;
-    height: 4rem;
-    margin-left: 2.5rem;
+    width: 7rem;
+    height: 7rem;
+    margin-left: 1.7rem;
     margin-bottom: 02rem;
 }
 
@@ -76,4 +78,82 @@
         height: 100%;
         padding:0;
     }
+}
+
+
+ .dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: static;
+    background-color: black;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+
+    /* Links inside the dropdown */
+    .dropdown-content a {
+        color: white;
+        padding: 12px 0px 5px 47px;
+        text-decoration: none;
+        display: block;
+    }
+
+        /* Change color of dropdown links on hover */
+        .dropdown-content a:hover {
+            background-color: #808080;
+        }
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+
+.back {
+    /*background: #e2e2e2;*/
+    background-color:#cfcfcf;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+  
+}
+
+
+.div-center {
+    width: 400px;
+    height: 330px;
+    background-color: white;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    max-width: 100%;
+    max-height: 100%;
+    overflow: auto;
+    padding: 1em 2em;
+    border-bottom: 2px solid #ccc;
+    border-right: 1.5px solid #ccc;
+    display: table;
+    /*border-radius: 15px;*/
+}
+
+div.content {
+    display: table-cell;
+    vertical-align: middle;
 }
