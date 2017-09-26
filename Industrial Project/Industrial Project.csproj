@@ -108,7 +108,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Pictures\Yoyo_logo_NO_BG.png" />
+    <Content Include="webfroms\Comparison.aspx" />
     <Content Include="webfroms\DashboardChart.aspx" />
+    <Content Include="webfroms\PaymentsChart.aspx" />
     <Content Include="webfroms\PopularityCharts.aspx" />
     <Content Include="webfroms\ManageAccount.aspx" />
     <Content Include="webfroms\ManagerOtherAccount.aspx" />
@@ -140,6 +142,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="webfroms\Comparison.aspx.cs">
+      <DependentUpon>Comparison.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webfroms\Comparison.aspx.designer.cs">
+      <DependentUpon>Comparison.aspx</DependentUpon>
+    </Compile>
     <Compile Include="webfroms\DashboardChart.aspx.cs">
       <DependentUpon>DashboardChart.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -153,6 +162,13 @@
     </Compile>
     <Compile Include="webfroms\DifferentNavigation.aspx.designer.cs">
       <DependentUpon>DifferentNavigation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webfroms\PaymentsChart.aspx.cs">
+      <DependentUpon>PaymentsChart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webfroms\PaymentsChart.aspx.designer.cs">
+      <DependentUpon>PaymentsChart.aspx</DependentUpon>
     </Compile>
     <Compile Include="webfroms\PopularityCharts.aspx.cs">
       <DependentUpon>PopularityCharts.aspx</DependentUpon>
