@@ -29,7 +29,7 @@ td:nth-child(even) {
     text-align: center;
 }
 
-.vGood {
+/*.vGood {
     background-color: #9f0;
 }
 
@@ -47,4 +47,36 @@ td:nth-child(even) {
 
 .vPoor {
     background-color: #f30;
+}*/
+
+.great {
+    background-color: #EC0205;
+}
+
+.vGood {
+    background-color: #F0854A;
+}
+
+.good {
+    background-color: #FA9B52;
+}
+
+.avg {
+    background-color: #FABA72;
+}
+
+.poor {
+    background-color: #60DCFB;
+}
+
+.vPoor {
+    background-color: #50B8D3;
+}
+
+.bad {
+    background-color: #4F8BAC;
+}
+
+.HiddenColumn {
+    display: none;
 }
