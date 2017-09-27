@@ -20,6 +20,16 @@ namespace Industrial_Project.webfroms
 
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            if (Session["username"] == null)
+            {
+                Response.Redirect("Login.aspx");
+            }
+            if (Session["role"].ToString() != "Admin")
+            {
+                UploadButton.Attributes.Add("style", "display:none");
+            }
+
             Debug.WriteLine("PAGE LOADED !");
 
             SqlConnection con = new SqlConnection();
@@ -40,6 +50,39 @@ namespace Industrial_Project.webfroms
             con.Dispose();
 
 
+        }
+
+        /// <summary>
+        /// Logs out the user and deletes the session.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void LogOut_click(object sender, EventArgs e)
+        {
+            Session["username"] = null;
+            Response.Redirect("Login.aspx");
+        }
+
+        /// <summary>
+        /// Redirects you to the upload page.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void Upload_Click(object sender, EventArgs e)
+        {
+
+            Response.Redirect("Upload.aspx");
+        }
+
+        /// <summary>
+        ///  Redirects to the appropriate page.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void AccClick(object sender, EventArgs e)
+        {
+            if (Session["role"].ToString() == "User") Response.Redirect("ManageAccount.aspx");
+            if (Session["role"].ToString() == "Admin") Response.Redirect("UserAlteration.aspx");
         }
 
         private static string printArr(List<double> array)

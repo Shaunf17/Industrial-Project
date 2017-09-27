@@ -31,11 +31,12 @@
               
                 </a>
             <div class="dropdown-content">
-                <a href="#">Total Sales</a>
-                <a href="#">Popularity</a>
-                <a href="#">Activity</a>
-                <a href="#">Heat Map</a>
-                <a href="#">Comparison</a>
+                    <a href="TotalSalesCharts.aspx">Total Sales</a>
+                    <a href="PopularityCharts.aspx">Popularity</a>
+                    <a href="ActivityCharts.aspx">Activity</a>
+                    <a href="PaymentsChart.aspx">Payments</a>
+                    <a href="#">Heat Map</a>
+                    <a href="Comparison.aspx">Comparison</a>
             </div>
         </div>
         <a class="nav-link" href="RawData.aspx"><i class="fa fa-th-list" aria-hidden="true"></i>

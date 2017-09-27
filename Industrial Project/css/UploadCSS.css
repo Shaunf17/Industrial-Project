@@ -1,43 +1,129 @@
 ﻿
-.UploadContent {
+.back {
+    /*background: #e2e2e2;*/
+    background-color:#f1f1f1;
+    width: 100%;
     position: absolute;
-    margin-left: 45%;
-    margin-top: 14%;
-    text-align: center;
-    width: 438.625px;
+    top: 0;
+    bottom: 0;
+    
+}
+
+
+.div-center {
+    width: 450px;
+    height: 450px;
+    background-color: white;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    max-width: 100%;
+    max-height: 100%;
+    overflow: auto;
+    padding: 1em 2em;
+    display: table;
+       border-radius: 7px;
+    border-style: solid;
+    border-width: 15px;
+    border-color: #d1d1d1;
+    padding: 15px;
+    /*border-radius: 15px;*/
+}
+div.content {
+    display: table-cell;
+    vertical-align: middle;
 
 }
 
-.UploadButton {
-    width: 100px;
-    height: 50px;
+
+.UploadContent {
+    width: 50%;
+    margin: auto;
+    background-color: white;
     border-radius: 7px;
-    background-color: #88cbff;
-    border: 0 solid #88cbff;
+    border-style: solid;
+    border-width: 15px;
+    border-color: #d1d1d1;
+    padding: 15px;
+
+}
+
+.background {
+    width: 80%;
+    height: auto;
+    background-color: none;
+    margin: auto;
+    margin-right: 5%;
+    top: 25%;
+    left: 15%;
+    position: absolute;
+}
+
+.buttonDiv {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.UploadButton {
+    width: 30%;
+    height: 45px;
+    border-radius: 9px;
+    background-color: #404040;
+    border: 0 solid #404040;
     color: white;
     font-size: 17px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-
+    margin: auto;
 }
 
     .UploadButton:hover {
-        background-color: #5db7fd;
-        border: 0 solid #5db7fd;
+        background-color: #646363;
+        border: 0 solid #646363;
     }
 
-.UploadIcon {
-    font-size: 100px;
-    color: blue;
-    margin-bottom: -20px;
-    margin-left: 20px;
+.uploadDiv {
+    padding-top: 3px;
+    width: 100%;
+    text-align: center;
+}
+
+.imgUpload {
+    width: 30%;
+    margin: 0 auto;
 }
 
 .ChooseFile {
-    background-color: #8c9ff6;
+    background-color: #96d4ef;
     padding: 20px;
-    padding-left: 130px;
-    border-radius: 7px;
-    color: white;
+    width: 63%;
+    margin: auto;
+    text-align: center;
+    color: black;
+    margin-bottom: 7px;
+    border-radius:7px;
+    font-size:15px;
 }
 
+.label
+{
+    margin-left: 1%;
+    font-size: 14px;
+    text-align: center;
+}
+
+
+h1, h4 {
+    font-family: Calibri !important;
+    text-align: center;
+}
+
+h4 {
+    color: black;
+    font-size: 20px !important;
+}

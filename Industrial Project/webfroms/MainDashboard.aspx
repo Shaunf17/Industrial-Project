@@ -22,6 +22,8 @@
     <script src='http://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/3.1.3/js/bootstrap-datetimepicker.min.js'></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js"></script>
 
+
+
     <title>Dashboard</title>
 </head>
 
@@ -45,11 +47,12 @@
               
                 </a>
             <div class="dropdown-content">
-                <a href="#">Total Sales</a>
-                <a href="#">Popularity</a>
-                <a href="#">Activity</a>
+                <a href="TotalSalesCharts.aspx">Total Sales</a>
+                <a href="PopularityCharts.aspx">Popularity</a>
+                <a href="ActivityCharts.aspx">Activity</a>
+                 <a href="PaymentsChart.aspx">Payments</a>
                 <a href="#">Heat Map</a>
-                <a href="#">Comparison</a>
+                <a href="Comparison.aspx">Comparison</a>
             </div>
         </div>
         <asp:LinkButton ID="UpButton" onclick="Upload_Click" runat="server" CssClass="nav-link"> <i class="fa fa-upload" aria-hidden="true"></i><div class="linkText d-inline"> Upload</div></asp:LinkButton>

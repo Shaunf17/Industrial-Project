@@ -1,95 +1,22 @@
-﻿li, a {
-    font-family: Calibri;
-    font-weight: 300;
-}
-
-body {
-    background-color: #efefef !important;
-    margin: auto;
-    font-family: Calibri;
-    font-weight: 300;
-}
-
-.Header {
-    margin-top: 0px;
-    width: 100%;
-    background-color: #141313;
-    height: 15%;
-}
-
-.SideBar {
-    height: 100%;
-    margin-left: 0;
-    width: 10%;
-    background-color: #141313;
-    position: absolute;
-}
-
-#YoyoLogo {
-    width: 15%;
-    height: 15%;
-    margin: 5px;
-}
-
-#SideBarTop {
-    height: 9%;
-}
-
-.SideBarMenu {
-}
-
-    .SideBarMenu a {
-        color: white;
-        font-size: 1.2vw; /*Originally 25px*/
-        display: block;
-        text-decoration: none;
-        padding: 10px;
-        margin-bottom: 5px;
-        padding-left: 10px;
-    }
-
-        .SideBarMenu a:hover {
-            background-color: #a0a0a0;
-            text-decoration: none;
-            color: white;
-        }
-
-        .SideBarMenu a.active {
-            background-color: #424242;
-            color: white;
-        }
-
-    .SideBarMenu span {
-        margin-right: 18px;
-    }
-
-.SubHeader {
-    background-color: #b6dfff;
-    margin-left: 10%;
-    height: 10%;
-    width: 100%;
-    position: absolute;
-    padding-left: 7%;
-    padding-top: 1%;
-    padding-bottom: 3%;
-    /*padding-top: 1.5%;*/
-}
-
-.GraphOptions li {
+﻿.GraphOptions li {
     display: inline-block;
     color: #424242;
     margin-right: 10%;
     font-size: 1.4vw; /*Originally 25px*/
 }
 
+body{
+    background-color:#f0f0f0 !important;
+}
+
 .background {
     border-color: black;
     width: 70%;
-    height: auto;
     background-color: none;
     margin: auto;
     margin-right: 10%;
     margin-bottom: 40px;
+
 }
 
 
@@ -130,8 +57,10 @@ h2 {
     font-weight: 600;
 }
 
+
+
 .divContainer {
-    height: 350px;
+    height: 400px;
     width: 48%;
     background-color: white;
     float: right;
@@ -142,6 +71,59 @@ h2 {
     border-style: solid;
     border-width: 1px;
     border-color: #cfcfcf;
+}
+.divContainer img {
+        width: 200px; 
+        display:inline-block;
+    }
+
+    .divContainer h1 {
+        font-size: 130px; 
+        margin-top: 35px;
+        margin-bottom: -3px; 
+        color: #000000;
+    }
+
+    .divContainer h2 {
+        margin-top: -9px; 
+        color: #000000;
+    }
+
+@media(max-width:1080px) {
+    .divContainer {
+        height: 200px;
+    }
+    
+    .divContainer img {
+        width: 100px; 
+        margin-top: -10px;
+    }
+
+    .divContainer h1 {
+        font-size: 70px; 
+        margin-top: -10px; 
+        margin-bottom: -3px; 
+        color: #000000
+    }
+
+    .divContainer h2 {
+        margin-top: -9px; 
+        color: #000000;
+    }
+
+    .UploadContent input {
+        width: 300px;
+        height: 40px;
+        font-size:17px;
+    }
+    .UploadContent label {
+        font-size: 17px;
+    }
+    .UploadContent {
+        z-index: -1;
+    }
+    
+
 }
 
 .container2 {
@@ -199,7 +181,7 @@ h2 {
     background-color: #bababa;
     color: black;
     display: inline-block;
-    margin-top: 6%;
+    margin-top: 4%;
     border-style: solid;
     border-width: 0.5px;
     border-color: #bdbdbd;

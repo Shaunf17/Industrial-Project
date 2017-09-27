@@ -1,0 +1,314 @@
+﻿@media (max-width: 1080px) {
+
+    .chartContainer{
+        margin-left:4rem;
+    }
+
+    .nav {
+        position: fixed;
+        background-color: #151515;
+        color: white;
+        height: 100%;
+        padding-top: 2rem;
+        font-family: Calibri;
+        font-weight: 200;
+        width: 4rem;
+       
+    }
+
+    .linkText {
+        visibility: hidden;
+        font-size: 1.3rem;
+    }
+
+    .nav-link {
+        color: white;
+        font-size: 1.3rem;
+        margin-top: 1rem;
+    }
+
+    #YoyoLogo {
+        width: 3.5rem;
+        height: 3.5rem;
+        margin-left: .25rem;
+        margin-bottom: 2rem;
+    }
+
+    .nav-link:hover {
+        color: white;
+        background-color: #808080;
+        text-decoration: none;
+    }
+
+    .nav:hover {
+        width: 13rem;
+    }
+
+        .nav:hover .linkText {
+            visibility: visible;
+            font-size: 1.3rem;
+        }
+
+        .nav:hover #YoyoLogo {
+            visibility: visible;
+            height: 10rem;
+            width: 10rem;
+            margin-left: 1.5rem;
+        }
+
+    .navbar li:hover ul #active {
+        color: white;
+        background-color: #808080;
+    }
+
+    .fa {
+        margin-right: 0.4rem;
+    }
+
+    .container-fluid {
+        margin-left: 3rem;
+        height: 100%;
+        padding: 0;
+    }
+
+    .row {
+        margin: 0;
+        width: 100%;
+    }
+
+
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    /* Dropdown Content (Hidden by Default) */
+    .dropdown-content {
+        display: none;
+        position: static;
+        font-size: 1.3rem;
+        background-color: black;
+        /*min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);*/
+        z-index: 1;
+    }
+
+        /* Links inside the dropdown */
+        .dropdown-content a {
+            color: white;
+            padding: 12px 0px 5px 47px;
+            text-decoration: none;
+            display: block;
+        }
+
+            /* Change color of dropdown links on hover */
+            .dropdown-content a:hover {
+                background-color: #808080;
+            }
+
+    /* Show the dropdown menu on hover */
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    /* Change the background color of the dropdown button when the dropdown content is shown */
+    .dropdown:hover .dropbtn {
+        background-color: #3e8e41;
+    }
+
+    .back {
+        /*background: #e2e2e2;*/
+        background-color: #cfcfcf;
+        width: 100%;
+        /*position: absolute;*/
+        top: 0;
+        bottom: 0;
+    }
+
+    .div-center {
+        width: 400px;
+        height: 330px;
+        background-color: white;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        max-width: 100%;
+        max-height: 100%;
+        overflow: auto;
+        padding: 1em 2em;
+        border-bottom: 2px solid #ccc;
+        border-right: 1.5px solid #ccc;
+        display: table;
+        /*border-radius: 15px;*/
+    }
+
+    div.content {
+        display: table-cell;
+        vertical-align: middle;
+    }
+}
+
+@media (min-width: 1080px) {
+
+    .chartContainer{
+        margin-left:17rem;
+    }
+
+    .nav {
+        width: 17rem;
+        position: fixed;
+        background-color: #151515;
+        color: white;
+        height: 100%;
+        padding-top: 2rem;
+        font-family: Calibri;
+        font-weight: 200;
+    }
+
+    .fa {
+        margin-right: 0.4rem;
+    }
+
+    .linkText {
+        visibility: visible;
+        font-size: 2rem;
+    }
+
+    .nav-link {
+        color: white;
+        font-size: 2rem;
+        margin-top: 1rem;
+    }
+
+    .labels input {
+        height: 45px;
+        font-size: 17px;
+        
+    }
+
+    .labels label {
+        font-size: 17px;
+        margin-left: initial;
+    }
+
+
+    /* Dropdown Content (Hidden by Default) */
+    .dropdown-content {
+        display: none;
+        position: static;
+        font-size: 2rem;
+        background-color: black;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+    
+    #YoyoLogo {
+        width: 10rem;
+        height: 10rem;
+        margin-left: 3.5rem;
+        margin-bottom: 02rem;
+    }
+
+    .container-fluid {
+        margin-left: 9rem;
+        height: 100%;
+        padding: 0;
+    }
+
+
+
+    /*************************************************************************/
+    /*************************************************************************/
+
+
+        /* Links inside the dropdown */
+        .dropdown-content a {
+            color: white;
+            padding: 12px 0px 5px 47px;
+            text-decoration: none;
+            display: block;
+        }
+
+            /* Change color of dropdown links on hover */
+            .dropdown-content a:hover {
+                background-color: #808080;
+            }
+
+    /* Show the dropdown menu on hover */
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+    /* Dropdown Content (Hidden by Default) */
+
+
+
+    /* Change the background color of the dropdown button when the dropdown content is shown */
+    .dropdown:hover .dropbtn {
+        background-color: #3e8e41;
+    }
+
+    .nav-link:hover {
+        color: white;
+        background-color: #808080;
+        text-decoration: none;
+    }
+
+    .navbar li:hover ul #active {
+        color: white;
+        background-color: #808080;
+    }
+
+
+    .row {
+        margin: 0;
+        width: 100%;
+    }
+
+
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+
+
+    .back {
+        /*background: #e2e2e2;*/
+        background-color: #cfcfcf;
+        width: 100%;
+        /*position: absolute;*/
+        top: 0;
+        bottom: 0;
+    }
+
+    .div-center {
+        width: 400px;
+        height: 330px;
+        background-color: white;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        max-width: 100%;
+        max-height: 100%;
+        overflow: auto;
+        padding: 1em 2em;
+        border-bottom: 2px solid #ccc;
+        border-right: 1.5px solid #ccc;
+        display: table;
+        /*border-radius: 15px;*/
+    }
+
+    div.content {
+        display: table-cell;
+        vertical-align: middle;
+    }
+}

@@ -45,11 +45,12 @@
               
                 </a>
             <div class="dropdown-content">
-                <a href="#">Total Sales</a>
-                <a href="#">Popularity</a>
-                <a href="#">Activity</a>
-                <a href="#">Heat Map</a>
-                <a href="#">Comparison</a>
+                    <a href="TotalSalesCharts.aspx">Total Sales</a>
+                    <a href="PopularityCharts.aspx">Popularity</a>
+                    <a href="ActivityCharts.aspx">Activity</a>
+                    <a href="PaymentsChart.aspx">Payments</a>
+                    <a href="#">Heat Map</a>
+                    <a href="Comparison.aspx">Comparison</a>
             </div>
         </div>
         <asp:LinkButton ID="UploadButton" onclick="Upload_Click" runat="server" CssClass="nav-link"> <i class="fa fa-upload" aria-hidden="true"></i><div class="linkText d-inline"> Upload</div></asp:LinkButton>
