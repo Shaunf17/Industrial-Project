@@ -10,26 +10,6 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <asp:Repeater ID="rptheatmap" runat="server">
-                <HeaderTemplate>
-                    <table id="heatmap">
-                </HeaderTemplate>
-
-                <ItemTemplate>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                </ItemTemplate>
-
-                <FooterTemplate>
-                    </table>
-                </FooterTemplate>
-
-            </asp:Repeater>
-        </div>
-
-        <div>
             <asp:GridView ID="GridView1" runat="server"></asp:GridView>
         </div>
     </form>
@@ -39,7 +19,7 @@
         $(function () {
             //$('tr > td:odd').each(function (index) {
             $('table td:nth-child(1) ~ td').each(function () {
-                var scale = [['vPoor', 10], ['poor', 20], ['avg', 50], ['good', 150], ['vGood', 500]];
+                var scale = [['bad',5], ['vPoor', 10], ['poor', 20], ['avg', 50], ['good', 100], ['vGood', 200], ['great', 10000]];
                 var score = $(this).text();
                 for (var i = 0; i < scale.length; i++) {
                     if (score <= scale[i][1]) {
@@ -48,21 +28,11 @@
                 }
             });
         });
+
+        function myFunc() {
+            alert("hello");
+            //document.body.style.backgroundColor = "black";
+        };
     </script>
-    <!--<script type="text/javascript">
-        //alert("hello");
-
-        var temp = document.getElementById("heatmap").getElementsByTagName("td");
-        var largest = 5;
-        for (var i = 0; i < temp.length; i++)
-        {
-            temp[i].innerHTML = i;
-        }
-        
-    </script>-->
-
-    <script>
-
-</script>
 </body>
 </html>
