@@ -21,16 +21,14 @@ namespace Industrial_Project.webfroms
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            if (Session["username"] == null)
-            {
-                Response.Redirect("Login.aspx");
-            }
-            if (Session["role"].ToString() != "Admin")
-            {
-                UploadButton.Attributes.Add("style", "display:none");
-            }
-
-            Debug.WriteLine("PAGE LOADED !");
+            //if (Session["username"] == null)
+            //{
+            //    Response.Redirect("Login.aspx");
+            //}
+            //if (Session["role"].ToString() != "Admin")
+            //{
+            //    UploadButton.Attributes.Add("style", "display:none");
+            //}
 
             SqlConnection con = new SqlConnection();
             string connString = ConfigurationManager.ConnectionStrings["Connection"].ConnectionString;
@@ -52,26 +50,16 @@ namespace Industrial_Project.webfroms
 
         }
 
-        private static string printArr(List<double> array)
-        {
-
-            string res = "";
-            foreach (double x in array)
-            {
-                Console.WriteLine(x);
-                res += x + " ; ";
-            }
-            return res;
-        }
-
+        /// <summary>
+        /// Get the data for the line chart.
+        /// </summary>
+        /// <param name="outR"> outlet name </param>
+        /// <param name="startDat"> Starting date of the data range </param>
+        /// <param name="endDat"> Ending date of the data range </param>
+        /// <returns></returns>
         [WebMethod]
         public static List<double> initializeChart(string outR, string startDat, string endDat)
         {
-            Debug.WriteLine(" METHOD ENTERED !" + outR);
-
-            //DateTime sDate = DateTime.ParseExact(startDat, "yyyy-MM-dd", null);
-            //DateTime endingDate = DateTime.ParseExact(endDat, "yyyy-MM-dd", null);
-            //int result = DateTime.Compare(sDate, endingDate);
 
             myData.Clear();
 
@@ -97,12 +85,7 @@ namespace Industrial_Project.webfroms
 
                 con.Close();
                 con.Dispose();
-
-                /*myData.Add(execProcedure(outR, sDate, sDate.AddMonths(1)));
-                    sDate = sDate.AddMonths(1);*/
-
-
-                Debug.WriteLine("The chart numbers array: " + printArr(myData));
+               
             }
             catch (Exception)
             {
@@ -146,20 +129,24 @@ namespace Industrial_Project.webfroms
         }
 
 
+        /// <summary>
+        /// Operation called by ajax to get the columns for the chart.
+        /// </summary>
+        /// <param name="outR"> location name</param>
+        /// <param name="startDat"> starting date</param>
+        /// <param name="endDat">ending date</param>
+        /// <returns></returns>
         [WebMethod]
         [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
         public static string[] GetColumnData(string outR, string startDat, string endDat)
         {
-            //string[] array = new string[] { "09/16", "FEB", "MAR", "APR", "MAY", "JUN", "02/17", "AUG", "SEP", "OCT", "NOV", "DEC" };
             DateTime sDate = DateTime.ParseExact(startDat, "yyyy-MM-dd", null);
             DateTime eDate = DateTime.ParseExact(endDat, "yyyy-MM-dd", null);
-            //Debug.WriteLine(sDate + "" + eDate);
             columnData.Clear();
             while (sDate <= eDate)
             {
                 columnData.Add(sDate.Date.ToString("yyyy-MM"));
                 sDate = sDate.AddMonths(1);
-                //Debug.WriteLine(sDate.Date);
             }
 
             string combindedString = string.Join(",", columnData.ToArray());
@@ -167,6 +154,11 @@ namespace Industrial_Project.webfroms
             return columnData.ToArray();
         }
 
+        /// <summary>
+        /// Get the chart data for the timeframe.
+        /// </summary>
+        /// <param name="timeFrame"></param>
+        /// <returns></returns>
         [WebMethod]
         [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
         public static List<double> GetBarPieGraphData(string timeFrame)
@@ -273,6 +265,11 @@ namespace Industrial_Project.webfroms
 
         }
 
+        /// <summary>
+        /// Get the data for the pie and bar charts.
+        /// </summary>
+        /// <param name="timeFrame"></param>
+        /// <returns></returns>
         [WebMethod]
         [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
         public static List<string> GetBarPieColumnData(string timeFrame)
@@ -378,13 +375,15 @@ namespace Industrial_Project.webfroms
 
         }
 
+        /// <summary>
+        /// Get the column data for a data range.
+        /// </summary>
+        /// <param name="startDat"> Starting date of data range. </param>
+        /// <param name="endDat"> Ending date of data range. </param>
+        /// <returns></returns>
         [WebMethod]
         public static List<string> GetBarPieDateRangeColumn(string startDat, string endDat)
         {
-
-            //DateTime sDate = DateTime.ParseExact(startDat, "yyyy-MM-dd", null);
-            //DateTime endingDate = DateTime.ParseExact(endDat, "yyyy-MM-dd", null);
-            //int result = DateTime.Compare(sDate, endingDate);
 
             columnData.Clear();
 
@@ -410,9 +409,6 @@ namespace Industrial_Project.webfroms
                 con.Close();
                 con.Dispose();
 
-                /*myData.Add(execProcedure(outR, sDate, sDate.AddMonths(1)));
-                    sDate = sDate.AddMonths(1);*/
-
 
             }
             catch (Exception)
@@ -423,14 +419,16 @@ namespace Industrial_Project.webfroms
 
         }
 
+        /// <summary>
+        /// Get the data for the pie and bar charts according to the data range.
+        /// </summary>
+        /// <param name="startDat"> Starting date of the data range. </param>
+        /// <param name="endDat"> Ending date of the data range. </param>
+        /// <returns></returns>
         [WebMethod]
         public static List<double> GetBarPieDateRangeData(string startDat, string endDat)
         {
            
-            //DateTime sDate = DateTime.ParseExact(startDat, "yyyy-MM-dd", null);
-            //DateTime endingDate = DateTime.ParseExact(endDat, "yyyy-MM-dd", null);
-            //int result = DateTime.Compare(sDate, endingDate);
-
             myData.Clear();
 
             SqlConnection con = new SqlConnection();
@@ -455,11 +453,6 @@ namespace Industrial_Project.webfroms
                 con.Close();
                 con.Dispose();
 
-                /*myData.Add(execProcedure(outR, sDate, sDate.AddMonths(1)));
-                    sDate = sDate.AddMonths(1);*/
-
-
-                Debug.WriteLine("The chart numbers array: " + printArr(myData));
             }
             catch (Exception)
             {

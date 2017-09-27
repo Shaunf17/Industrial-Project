@@ -1,0 +1,67 @@
+﻿
+
+table {
+    width: 20em;
+}
+
+#score {
+    width: 50%;
+}
+
+#name {
+    width: 50%;
+}
+
+th {
+    border-bottom: 2px solid #000;
+    padding: 0.5em 0 0.1em 0;
+    font-size: 1.2em;
+}
+
+td {
+    border-bottom: 2px solid #ccc;
+    padding: 0.5em 0 0.1em 0;
+}
+
+th,
+td {
+    text-align: center;
+}
+
+th
+td:nth-child(1) ~ td {
+    text-align: left;
+}
+
+
+.great {
+    background-color: #EC0205;
+}
+
+.vGood {
+    background-color: #F0854A;
+}
+
+.good {
+    background-color: #FA9B52;
+}
+
+.avg {
+    background-color: #FABA72;
+}
+
+.poor {
+    background-color: #60DCFB;
+}
+
+.vPoor {
+    background-color: #50B8D3;
+}
+
+.bad {
+    background-color: #4F8BAC;
+}
+
+.HiddenColumn {
+    display: none;
+}

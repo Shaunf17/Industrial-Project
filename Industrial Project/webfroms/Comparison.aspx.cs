@@ -31,8 +31,6 @@ namespace Industrial_Project.webfroms
                 UploadButton.Attributes.Add("style", "display:none");
             }
 
-            Debug.WriteLine("PAGE LOADED !");
-
             SqlConnection con = new SqlConnection();
             string connString = ConfigurationManager.ConnectionStrings["Connection"].ConnectionString;
             con.ConnectionString = connString;
@@ -109,6 +107,11 @@ namespace Industrial_Project.webfroms
         }
 
 
+        /// <summary>
+        /// The function loads the according years according to the location that has been chosen.
+        /// </summary>
+        /// <param name="listbox"> Location/Outlate name </param>
+        /// <returns></returns>
         [WebMethod]
         [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
         public static List<string> loadYearDropdown(string listbox)
@@ -121,7 +124,7 @@ namespace Industrial_Project.webfroms
 
             SqlCommand cmd1 = new SqlCommand("GetYearsByLocation", con1);
             cmd1.CommandType = CommandType.StoredProcedure;
-            cmd1.Parameters.Add(new SqlParameter("location", listbox));//DropDownListLocation.SelectedItem.Text));
+            cmd1.Parameters.Add(new SqlParameter("location", listbox));
             con1.Open();
             SqlDataReader rd1 = cmd1.ExecuteReader();
 
@@ -138,6 +141,13 @@ namespace Industrial_Project.webfroms
             return years;
         }
 
+        /// <summary>
+        ///  Get the data for the specific year.
+        /// </summary>
+        /// <param name="statistic"></param>
+        /// <param name="location"></param>
+        /// <param name="year"></param>
+        /// <returns></returns>
         [WebMethod]
         public static List<double> getYearData(string statistic, string location, string year)
         {

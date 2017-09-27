@@ -29,7 +29,6 @@ namespace Industrial_Project.webfroms
             {
                 UploadButton.Attributes.Add("style", "display:none");
             }
-            Debug.WriteLine("PAGE LOADED !");
 
             SqlConnection con = new SqlConnection();
             string connString = ConfigurationManager.ConnectionStrings["Connection"].ConnectionString;
@@ -84,10 +83,16 @@ namespace Industrial_Project.webfroms
             if (Session["role"].ToString() == "Admin") Response.Redirect("UserAlteration.aspx");
         }
 
+        /// <summary>
+        /// The operation gets the payments count according to the location, starting date and ending date.
+        /// </summary>
+        /// <param name="outR"> Location/Outlet name </param>
+        /// <param name="startDat"> Starting date of the date range. </param>
+        /// <param name="endDat"> Ending date of the date range. </param>
+        /// <returns></returns>
         [WebMethod]
         public static List<double> getPayments(string outR, string startDat, string endDat)
         {
-            Debug.WriteLine(" METHOD ENTERED !" + outR);
 
             myData.Clear();
 

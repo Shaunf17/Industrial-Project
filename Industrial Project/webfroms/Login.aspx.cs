@@ -17,11 +17,15 @@ namespace Industrial_Project.webfroms
             }
         }
 
+        /// <summary>
+        /// On click handler of the login button.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void Btnlogin_click(object sender, EventArgs e)
         {
             SqlConnection conn = new SqlConnection();
             string connString = ConfigurationManager.ConnectionStrings["Connection"].ConnectionString;
-            //SqlCommand Cmd = new SqlCommand();
             conn.ConnectionString = connString;
 
             SqlCommand com = new SqlCommand("CheckUser", conn);
@@ -29,7 +33,6 @@ namespace Industrial_Project.webfroms
 
             SqlParameter username = new SqlParameter("username", userName.Text);
             SqlParameter password = new SqlParameter("password", Hash(userPassword.Text));
-            //Label1.Text = (Hash(userPassword.Text));
             com.Parameters.Add(username);
             com.Parameters.Add(password);
             conn.Open();
@@ -52,6 +55,11 @@ namespace Industrial_Project.webfroms
             }
         }
 
+        /// <summary>
+        /// Hashes the inputted password.
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
         static string Hash(string input)
         {
             using (SHA1Managed sha1 = new SHA1Managed())

@@ -29,9 +29,7 @@ namespace Industrial_Project.webfroms
             {
                 UploadButton.Attributes.Add("style", "display:none");
             }
-
-            Debug.WriteLine("PAGE LOADED !");
-
+           
             SqlConnection con = new SqlConnection();
             string connString = ConfigurationManager.ConnectionStrings["Connection"].ConnectionString;
             con.ConnectionString = connString;
@@ -85,27 +83,19 @@ namespace Industrial_Project.webfroms
             if (Session["role"].ToString() == "Admin") Response.Redirect("UserAlteration.aspx");
         }
 
-        private static string printArr(List<double> array)
-        {
 
-            string res = "";
-            foreach (double x in array)
-            {
-                Console.WriteLine(x);
-                res += x + " ; ";
-            }
-            return res;
-        }
-
+        /// <summary>
+        /// The operation gets the information for the line chart according 
+        /// to the location, start date and end date of a data range.
+        /// </summary>
+        /// <param name="outR"> Location/Outlet name </param>
+        /// <param name="startDat"> Start date of the data range </param>
+        /// <param name="endDat"> End date of the data range </param>
+        /// <returns></returns>
         [WebMethod]
         public static List<double> initializeChart(string outR, string startDat, string endDat)
         {
-            Debug.WriteLine(" METHOD ENTERED !" + outR);
-
-            //DateTime sDate = DateTime.ParseExact(startDat, "yyyy-MM-dd", null);
-            //DateTime endingDate = DateTime.ParseExact(endDat, "yyyy-MM-dd", null);
-            //int result = DateTime.Compare(sDate, endingDate);
-
+            
             myData.Clear();
 
             SqlConnection con = new SqlConnection();
@@ -131,7 +121,6 @@ namespace Industrial_Project.webfroms
                 con.Close();
                 con.Dispose();
 
-                Debug.WriteLine("The chart numbers array: " + printArr(myData));
             }
             catch (Exception)
             {
@@ -142,27 +131,36 @@ namespace Industrial_Project.webfroms
         }
 
 
+        /// <summary>
+        /// Get the column data for the charts.
+        /// </summary>
+        /// <param name="outR"> Location/Outlate name </param>
+        /// <param name="startDat"> Start date of the data range </param>
+        /// <param name="endDat"> End date of the data range </param>
+        /// <returns></returns>
         [WebMethod]
         [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
         public static string[] GetColumnData(string outR, string startDat, string endDat)
         {
-            //string[] array = new string[] { "09/16", "FEB", "MAR", "APR", "MAY", "JUN", "02/17", "AUG", "SEP", "OCT", "NOV", "DEC" };
+
             DateTime sDate = DateTime.ParseExact(startDat, "yyyy-MM-dd", null);
             DateTime eDate = DateTime.ParseExact(endDat, "yyyy-MM-dd", null);
-            //Debug.WriteLine(sDate + "" + eDate);
             columnData.Clear();
             while (sDate <= eDate)
             {
                 columnData.Add(sDate.Date.ToString("yyyy-MM"));
                 sDate = sDate.AddMonths(1);
-                //Debug.WriteLine(sDate.Date);
             }
 
             string combindedString = string.Join(",", columnData.ToArray());
-            Debug.WriteLine("Dates array: " + combindedString);
             return columnData.ToArray();
         }
 
+        /// <summary>
+        /// Gets the data for the bar/pie charts according to the time frame given.
+        /// </summary>
+        /// <param name="timeFrame"></param>
+        /// <returns></returns>
         [WebMethod]
         [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
         public static List<double> GetBarPieGraphData(string timeFrame)
@@ -269,6 +267,11 @@ namespace Industrial_Project.webfroms
 
         }
 
+        /// <summary>
+        /// Gets the column name for the bar/pie charts according to a time frame.
+        /// </summary>
+        /// <param name="timeFrame"></param>
+        /// <returns></returns>
         [WebMethod]
         [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
         public static List<string> GetBarPieColumnData(string timeFrame)
@@ -374,13 +377,16 @@ namespace Industrial_Project.webfroms
 
         }
 
+
+        /// <summary>
+        /// Gets the column data for the bar/pie chart according to a date range.
+        /// </summary>
+        /// <param name="startDat"> Start date of the date range </param>
+        /// <param name="endDat"> End date of the date range </param>
+        /// <returns></returns>
         [WebMethod]
         public static List<string> GetBarPieDateRangeColumn(string startDat, string endDat)
         {
-
-            //DateTime sDate = DateTime.ParseExact(startDat, "yyyy-MM-dd", null);
-            //DateTime endingDate = DateTime.ParseExact(endDat, "yyyy-MM-dd", null);
-            //int result = DateTime.Compare(sDate, endingDate);
 
             columnData.Clear();
 
@@ -416,14 +422,17 @@ namespace Industrial_Project.webfroms
 
         }
 
+
+        /// <summary>
+        /// Get the pie/bar data for a specific date range.
+        /// </summary>
+        /// <param name="startDat"> Start date of a date range </param>
+        /// <param name="endDat"> End date of a date range </param>
+        /// <returns></returns>
         [WebMethod]
         public static List<double> GetBarPieDateRangeData(string startDat, string endDat)
         {
            
-            //DateTime sDate = DateTime.ParseExact(startDat, "yyyy-MM-dd", null);
-            //DateTime endingDate = DateTime.ParseExact(endDat, "yyyy-MM-dd", null);
-            //int result = DateTime.Compare(sDate, endingDate);
-
             myData.Clear();
 
             SqlConnection con = new SqlConnection();
@@ -447,8 +456,6 @@ namespace Industrial_Project.webfroms
 
                 con.Close();
                 con.Dispose();
-
-                Debug.WriteLine("The chart numbers array: " + printArr(myData));
             }
             catch (Exception)
             {

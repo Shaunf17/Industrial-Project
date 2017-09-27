@@ -48,10 +48,13 @@
                     <a href="PopularityCharts.aspx">Popularity</a>
                     <a href="ActivityCharts.aspx">Activity</a>
                     <a href="PaymentsChart.aspx">Payments</a>
-                    <a href="#">Heat Map</a>
+                    <a href="Heatmap.aspx">Heat Map</a>
                     <a href="Comparison.aspx">Comparison</a>
                 </div>
             </div>
+            <a class="nav-link" href="Tribes.aspx"><i class="fa fa-group" aria-hidden="true"></i>
+                <div class="linkText d-inline">Tribes</div>
+            </a>
             <asp:LinkButton ID="UploadButton" OnClick="Upload_Click" runat="server" CssClass="nav-link"> <i class="fa fa-upload" aria-hidden="true"></i><div class="linkText d-inline"> Upload</div></asp:LinkButton>
             <asp:LinkButton ID="AccountButton" OnClick="Account_click" runat="server" CssClass="nav-link"><i class="fa fa-user" aria-hidden="true"></i><div class="linkText d-inline"> Account</div></asp:LinkButton>
             <asp:LinkButton ID="LogOut" OnClick="LogOut_click" runat="server" CssClass="nav-link">
@@ -59,10 +62,10 @@
         </nav>
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-4 col-md-offset-4 UploadContent">
-                    <h1 style="margin-left: 17%; margin-top:12%;">Update details of the user</h1>
+                <div class="col-md-4 col-md-offset-4 col-xs-4 col-xs-offset-4 UploadContent">
+                    <h1 style="margin-left: 19%; margin-top:48%;">Update details of the user</h1>
 
-                        <div class="labels" style="margin-top: 10%">
+                        <div class="labels" style="margin-top: 6%">
                             <label>Username </label>
                             <asp:TextBox ID="userName" runat="server" CssClass="textbox form-control input-sm chat-input "></asp:TextBox>
                             <label>Password</label>
@@ -75,7 +78,7 @@
                         </div>
                         <br />
 
-                        <div class="wrapper" >
+                        <div class="wrapper" style="margin-top: 2%;margin-left: 1%">
                             <span class="group-btn">
                                 <asp:Button ID="btnAdd" OnClick="Update_Click" runat="server" style="margin-left: 30%; width: 170px; height:45px; font-size:17px;" Text="Update" CssClass="btn btn-primary btn-lg"></asp:Button>
                             </span>

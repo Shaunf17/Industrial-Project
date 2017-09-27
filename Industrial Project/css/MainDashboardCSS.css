@@ -19,6 +19,9 @@ body{
 
 }
 
+.dropdownRoles select{
+   font-size:17px;
+}
 
 #circle {
     width: 200px;
@@ -60,7 +63,7 @@ h2 {
 
 
 .divContainer {
-    height: 400px;
+    height: 95%;
     width: 48%;
     background-color: white;
     float: right;
@@ -73,7 +76,7 @@ h2 {
     border-color: #cfcfcf;
 }
 .divContainer img {
-        width: 200px; 
+        width: 35%;
         display:inline-block;
     }
 
@@ -89,41 +92,64 @@ h2 {
         color: #000000;
     }
 
-@media(max-width:1080px) {
-    .divContainer {
-        height: 200px;
-    }
-    
-    .divContainer img {
-        width: 100px; 
-        margin-top: -10px;
+    @media (min-width: 1600px){
+        .divContainer img {
+            width: 43%;
+            display:inline-block;
+        }
     }
 
-    .divContainer h1 {
-        font-size: 70px; 
-        margin-top: -10px; 
-        margin-bottom: -3px; 
-        color: #000000
-    }
-
-    .divContainer h2 {
-        margin-top: -9px; 
-        color: #000000;
-    }
-
-    .UploadContent input {
-        width: 300px;
-        height: 40px;
-        font-size:17px;
-    }
-    .UploadContent label {
-        font-size: 17px;
-    }
-    .UploadContent {
-        z-index: -1;
-    }
     
 
+    @media(max-width:1080px) {
+        .divContainer {
+            height: 200px;
+        }
+    
+        .divContainer img {
+            width: 100px; 
+            margin-top: -10px;
+        }
+
+        .divContainer h1 {
+            font-size: 70px; 
+            margin-top: -10px; 
+            margin-bottom: -3px; 
+            color: #000000
+        }
+
+        .divContainer h2 {
+            margin-top: -9px; 
+            color: #000000;
+        }
+
+        .UploadContent input {
+            width: 300px;
+            height: 40px;
+            margin-left: 17%;
+            font-size:17px;
+        }
+        .UploadContent label {
+            margin-left: 17%;
+            font-size: 17px;
+        }
+
+        .UploadContent select {
+            width:300px; 
+            font-size: 17px;
+            margin-left: 17%;
+        }
+    
+    }
+#btnAdd {
+    margin-left: 30%; 
+    width: 170px; 
+    height: 45px; 
+    font-size: 17px;
+}
+
+#tableTitle {
+    margin-left: 35%;
 }
 
 .container2 {
@@ -158,11 +184,12 @@ h2 {
 
 
 .div1 {
-    width: 24%;
-    height: 350px;
+    width: 20%;
+    margin-left: 3%;
     background-color: none;
     align-content: center;
-    padding-top: 35px;
+    padding-top: 1%;
+    padding-bottom: 1%;
     display: inline-block;
     text-align: center;
     padding-left: 10px;
@@ -174,7 +201,6 @@ h2 {
     margin: auto;
     height: auto;
 }
-
 
 .container2Header {
     width: 100%;

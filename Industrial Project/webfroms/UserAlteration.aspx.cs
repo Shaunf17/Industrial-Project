@@ -95,13 +95,13 @@ namespace Industrial_Project.webfroms
                         cell3.Controls.Add(deleteBtn);
                     }
                     row.Cells.Add(cell3);
-                   
+
                     Table1.Rows.Add(row);
                     count++;
                 }
 
             }
-            
+
             rd.Close();
             conn.Close();
 

@@ -49,11 +49,14 @@
                     <a href="PopularityCharts.aspx">Popularity</a>
                     <a href="ActivityCharts.aspx">Activity</a>
                     <a href="PaymentsChart.aspx">Payments</a>
-                    <a href="#">Heat Map</a>
+                    <a href="Heatmap.aspx">Heat Map</a>
                     <a href="Comparison.aspx">Comparison</a>
                 </div>
             </div>
             <br />
+               <a class="nav-link" href="Tribes.aspx" style="display: inline-flex; padding: 10px 65px 5px 25px;"><i class="fa fa-group" aria-hidden="true"></i>
+                <div class="linkText" style="padding: 0px 0px 10px 5px; margin-top: -5px;">Tribes</div>
+            </a>
             <asp:LinkButton ID="UploadButton" OnClick="Upload_Click" runat="server" CssClass="nav-link" Style="display: inline-flex; padding: 10px 55px 5px 25px;"> <i class="fa fa-upload" aria-hidden="true"></i><div class="linkText" style="padding: 0px 0px 10px 5px; margin-top: -5px;"> Upload</div></asp:LinkButton><br />
             <asp:LinkButton ID="AccountButton" OnClick="AccClick" runat="server" CssClass="nav-link" Style="display: inline-flex; padding: 10px 55px 5px 25px;"><i class="fa fa-user" aria-hidden="true"></i><div class="linkText" style="padding: 0px 0px 10px 5px; margin-top: -5px;"> Account</div></asp:LinkButton><br />
             <asp:LinkButton ID="LogOut" OnClick="LogOut_click" runat="server" CssClass="nav-link" Style="display: inline-flex; padding: 10px 55px 5px 25px;">
@@ -136,7 +139,11 @@
                             scaleLabel: {
                                 display: true,
                                 labelString: 'Locations'
-                            }
+                            },
+                            ticks: {
+                            fontSize: 13,
+                            autoSkip: false
+                    }
                         }],
                         yAxes: [{
                             display: true,
@@ -222,11 +229,6 @@
 
                         }
                         barConfig.data.labels = xAxesData;
-                        var discountedPayment;
-                        var payment;
-                        var redemption;
-                        var refund;
-                        var reversal;
 
                         var discountedPaymentDataset = {
                             label: 'Discounted Payment',

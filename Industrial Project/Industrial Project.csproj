@@ -95,6 +95,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="css\HeatMapStyle.css" />
     <Content Include="css\Navbar.css" />
     <Content Include="css\LoginCss.css" />
     <Content Include="css\MainDashboardCSS.css" />
@@ -111,7 +112,9 @@
     </Content>
     <Content Include="Pictures\Yoyo_logo_NO_BG.png" />
     <Content Include="webfroms\Comparison.aspx" />
+    <Content Include="webfroms\Tribes.aspx" />
     <Content Include="webfroms\ManageOtherAccounts.aspx" />
+    <Content Include="webfroms\Heatmap.aspx" />
     <Content Include="webfroms\UserAlteration.aspx" />
     <Content Include="webfroms\ManageAccount.aspx" />
     <Content Include="webfroms\Upload.aspx" />
@@ -131,7 +134,6 @@
     <Content Include="Pictures\Union_logo_NO_BG.png" />
     <Content Include="Pictures\Yoyo_logo_white_NO_BG.png" />
     <Content Include="Web.config" />
-    <Content Include="webfroms\DifferentNavigation.aspx" />
     <Content Include="webfroms\RawData.aspx" />
     <Content Include="webfroms\TotalSalesCharts.aspx" />
   </ItemGroup>
@@ -144,12 +146,12 @@
     <Compile Include="webfroms\Comparison.aspx.designer.cs">
       <DependentUpon>Comparison.aspx</DependentUpon>
     </Compile>
-    <Compile Include="webfroms\DifferentNavigation.aspx.cs">
-      <DependentUpon>DifferentNavigation.aspx</DependentUpon>
+    <Compile Include="webfroms\Tribes.aspx.cs">
+      <DependentUpon>Tribes.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="webfroms\DifferentNavigation.aspx.designer.cs">
-      <DependentUpon>DifferentNavigation.aspx</DependentUpon>
+    <Compile Include="webfroms\Tribes.aspx.designer.cs">
+      <DependentUpon>Tribes.aspx</DependentUpon>
     </Compile>
     <Compile Include="webfroms\ManageOtherAccounts.aspx.cs">
       <DependentUpon>ManageOtherAccounts.aspx</DependentUpon>
@@ -157,6 +159,13 @@
     </Compile>
     <Compile Include="webfroms\ManageOtherAccounts.aspx.designer.cs">
       <DependentUpon>ManageOtherAccounts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="webfroms\Heatmap.aspx.cs">
+      <DependentUpon>Heatmap.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="webfroms\Heatmap.aspx.designer.cs">
+      <DependentUpon>Heatmap.aspx</DependentUpon>
     </Compile>
     <Compile Include="webfroms\UserAlteration.aspx.cs">
       <DependentUpon>UserAlteration.aspx</DependentUpon>

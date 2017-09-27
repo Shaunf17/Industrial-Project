@@ -51,10 +51,13 @@
                 <a href="PopularityCharts.aspx">Popularity</a>
                 <a href="ActivityCharts.aspx">Activity</a>
                  <a href="PaymentsChart.aspx">Payments</a>
-                <a href="#">Heat Map</a>
+                <a href="Heatmap.aspx">Heat Map</a>
                 <a href="Comparison.aspx">Comparison</a>
             </div>
         </div>
+        <a class="nav-link" href="Tribes.aspx"><i class="fa fa-group" aria-hidden="true"></i>
+            <div class="linkText d-inline">Tribes</div>
+        </a>
         <asp:LinkButton ID="UpButton" onclick="Upload_Click" runat="server" CssClass="nav-link"> <i class="fa fa-upload" aria-hidden="true"></i><div class="linkText d-inline"> Upload</div></asp:LinkButton>
         <asp:LinkButton ID="AccountButton" onclick="Account_Click" runat="server" CssClass="nav-link"><i class="fa fa-user" aria-hidden="true"></i><div class="linkText d-inline"> Account</div></asp:LinkButton>
         <asp:LinkButton ID="LogOut" OnClick="LogOut_click" runat="server" CssClass="nav-link">
@@ -64,7 +67,7 @@
     </form>
     <div class="background">
         <div class="container2Header">
-            <h4><b>Statistics - Previous Week</b></h4>
+            <h1><b>Statistics - Previous Week</b></h1>
         </div>
 
         <div class="container2">
