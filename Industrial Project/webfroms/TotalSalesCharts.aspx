@@ -120,7 +120,7 @@
                         <div class='input-group'>
                             <!--locationChange-->
                             <label for="outletLocation">Location</label><br />
-                            <asp:ListBox ID="outletLocation" runat="server" SelectionMode="Multiple"></asp:ListBox>
+                            <asp:ListBox ID="outletLocation" runat="server" SelectionMode="Multiple" CssClass="locationChange"></asp:ListBox>
                         </div>
                     </div>
                 </div>

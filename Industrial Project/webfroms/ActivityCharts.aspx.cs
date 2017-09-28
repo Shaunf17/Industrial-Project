@@ -21,14 +21,14 @@ namespace Industrial_Project.webfroms
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            //if (Session["username"] == null)
-            //{
-            //    Response.Redirect("Login.aspx");
-            //}
-            //if (Session["role"].ToString() != "Admin")
-            //{
-            //    UploadButton.Attributes.Add("style", "display:none");
-            //}
+            if (Session["username"] == null)
+            {
+                Response.Redirect("Login.aspx");
+            }
+            if (Session["role"].ToString() != "Admin")
+            {
+                UploadButton.Attributes.Add("style", "display:none");
+            }
 
             SqlConnection con = new SqlConnection();
             string connString = ConfigurationManager.ConnectionStrings["Connection"].ConnectionString;
