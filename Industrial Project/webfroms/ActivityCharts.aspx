@@ -218,7 +218,7 @@
                             display: true,
                             scaleLabel: {
                                 display: true,
-                                labelString: 'Transactions Count'
+                                labelString: 'Customers'
                             }
                         }]
                     }
