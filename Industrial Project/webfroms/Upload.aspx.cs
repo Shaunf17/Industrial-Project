@@ -207,7 +207,7 @@ namespace Industrial_Project.webfroms
         {
             // Prepare the variables need for the operation
             string ServerFolderPath = Server.MapPath(ConfigurationManager.AppSettings["FolderPath"]);
-            string ssqltable = "ImportingTest";       // SQL Table name
+            string ssqltable = "YoyoDisbursals";       // SQL Table name
             string excelFilePath = ServerFolderPath + FileName;
 
             // Query for the data to be collected from the excel file
