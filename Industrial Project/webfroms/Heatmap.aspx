@@ -45,7 +45,7 @@
 
                 </a>
                 <div class="dropdown-content">
-                    <a href="Heatmap.aspx">Total Sales</a>
+                    <a href="TotalSalesCharts.aspx">Total Sales</a>
                     <a href="PopularityCharts.aspx">Popularity</a>
                     <a href="ActivityCharts.aspx">Activity</a>
                     <a href="PaymentsChart.aspx">Payments</a>
